@@ -6,11 +6,11 @@ const { startLoader, stopLoader } = Loader.createLoader();
 
 const componentName = process.argv[2];
 
-const destinationDirectoryPath = path.resolve(__dirname, '../src/components/');
+const destinationDirectoryPath = path.resolve(__dirname, '../src/uikit/');
 const destinationNewDirectoryPath = path.join(destinationDirectoryPath, componentName);
 const createFilePath = (filename) => path.join(destinationNewDirectoryPath, filename);
 
-const filePrefixes = ['.tsx', '.styles.scss', '.types.ts'];
+const filePrefixes = ['.tsx', '.styled.ts', '.types.ts'];
 
 main();
 
@@ -51,5 +51,5 @@ function createComponentIndexFile() {
 }
 
 function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
