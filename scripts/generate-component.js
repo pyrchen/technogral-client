@@ -5,8 +5,9 @@ const Loader = require('./_loader');
 const { startLoader, stopLoader } = Loader.createLoader();
 
 const componentName = process.argv[2];
+const destination = process.argv[3];
 
-const destinationDirectoryPath = path.resolve(__dirname, '../src/uikit/');
+const destinationDirectoryPath = path.resolve(__dirname, `../src/${destination}/`);
 const destinationNewDirectoryPath = path.join(destinationDirectoryPath, componentName);
 const createFilePath = (filename) => path.join(destinationNewDirectoryPath, filename);
 

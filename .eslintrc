@@ -68,5 +68,5 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-unused-vars": "warn"
   },
-  "ignorePatterns": ["scripts/**/*"]
+  "ignorePatterns": ["scripts/**/*", "babel.config.js"]
 }

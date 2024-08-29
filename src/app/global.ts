@@ -1,6 +1,8 @@
+'use client';
+
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 	* {
 		box-sizing: border-box;
 		padding: 0;
@@ -32,5 +34,3 @@ const GlobalStyles = createGlobalStyle`
 		margin-left: 0;
 	}
 `;
-
-export default GlobalStyles;
