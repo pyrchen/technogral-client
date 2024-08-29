@@ -20,6 +20,7 @@
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "simple-import-sort/exports": "error",
+    "import/no-unresolved": "off",
     "simple-import-sort/imports": [
       "error",
       {
