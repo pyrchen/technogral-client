@@ -10,5 +10,5 @@ import { AppThemes } from '@/constants/theme.constants';
 export default function StyledComponentsThemeRegistry({ children }: { children: React.ReactNode }) {
 	const [theme, setTheme] = useState<AppThemes>(AppThemes.LIGHT);
 
-	return <ThemeProvider theme={ThemeColors[theme]}>{children}</ThemeProvider>;
+	return <ThemeProvider theme={ThemeColors[theme]}>{children};</ThemeProvider>;
 }

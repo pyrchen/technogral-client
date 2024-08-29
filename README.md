@@ -18,8 +18,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 #### 1. Generate component
 ```bash
-npm run script:generate:component <component_name>
+npm run script:generate:component <component_name> <destination>
 ```
+destination = components | uikit
 
 ## Deploy on Vercel
 
