@@ -11,14 +11,14 @@ const borderColorPicker: TPickerInput = ({ theme }) => theme.MAIN.MAIN_2;
 const bgColorPicker: TPickerInput = ({ theme }) => theme.MAIN.MAIN_5;
 const heightPicker: TPickerInput = ({ size }) => toPx(size === 'medium' ? 50 : 60);
 
-export const StyledInput = styled.input<ITextInputProps>`
+export const __Input = styled.input<ITextInputProps>`
 	width: 100%;
 	font-size: 16px;
 	font-weight: ${TextWeights.MEDIUM};
 	background-color: transparent;
 `;
 
-export const StyledInputWrapper = styled.div<ITextInputProps>`
+export const __InputWrapper = styled.div<ITextInputProps>`
 	display: inline-flex;
 	border-radius: 10px;
 	height: ${heightPicker};

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { StyledInput, StyledInputWrapper } from '@/uikit/TextInput/TextInput.styled';
+import { __Input, __InputWrapper } from '@/uikit/TextInput/TextInput.styled';
 import { ITextInputProps } from '@/uikit/TextInput/TextInput.types';
 
 const TextInput: FC<ITextInputProps> = ({
@@ -13,15 +13,15 @@ const TextInput: FC<ITextInputProps> = ({
 	...props
 }) => {
 	return (
-		<StyledInputWrapper size={size}>
+		<__InputWrapper size={size}>
 			{leftAddon}
-			<StyledInput
+			<__Input
 				value={value}
 				onInput={onInput}
 				{...props}
 			/>
 			{rightAddon}
-		</StyledInputWrapper>
+		</__InputWrapper>
 	);
 };
 

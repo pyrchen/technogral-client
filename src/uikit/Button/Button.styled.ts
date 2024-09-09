@@ -13,7 +13,7 @@ const colorPicker: TPicker = ({ theme }) => theme.MAIN.MAIN_5;
 const heightPicker: TPicker = ({ size }) => toPx(ButtonSizes[size!]);
 const fontSizePicker: TPicker = ({ size }) => toPx(ButtonFontSizes[size!]);
 
-const StyledButton = styled.button<IButtonProps>`
+const __Button = styled.button<IButtonProps>`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -36,4 +36,4 @@ const StyledButton = styled.button<IButtonProps>`
 	}
 `;
 
-export default StyledButton;
+export default __Button;

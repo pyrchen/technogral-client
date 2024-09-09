@@ -3,7 +3,7 @@
 import { FC } from 'react';
 
 import { TextTags, TextWeights } from '@/constants/text.contants';
-import StyledTypeTextElements from '@/uikit/TypoText/TypoText.styled';
+import __TypeTextElements from '@/uikit/TypoText/TypoText.styled';
 import { ITypoTextProps } from '@/uikit/TypoText/TypoText.types';
 
 const TypoText: FC<ITypoTextProps> = ({
@@ -15,17 +15,17 @@ const TypoText: FC<ITypoTextProps> = ({
 	decoration = 'none',
 	...props
 }) => {
-	const StyledTextElement = StyledTypeTextElements[as];
+	const __TextElement = __TypeTextElements[as];
 
 	return (
-		<StyledTextElement
+		<__TextElement
 			weight={weight}
 			fontSize={fontSize}
 			decoration={decoration}
 			{...props}
 		>
 			{children || text}
-		</StyledTextElement>
+		</__TextElement>
 	);
 };
 

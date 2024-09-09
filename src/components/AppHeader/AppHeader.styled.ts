@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledAppHeader = styled.div`
+export const __AppHeader = styled.div`
 	padding: 35px 0;
 `;
 
-export const StyledGrid = styled.div`
+export const __Grid = styled.div`
 	display: grid;
 	align-items: center;
 	grid-template-columns: auto 1fr auto auto;
@@ -12,11 +12,11 @@ export const StyledGrid = styled.div`
 	gap: 24px;
 `;
 
-export const StyledLinks = styled.div`
+export const __Links = styled.div`
 	display: flex;
 	gap: 27px;
 `;
 
-export const StyledButtonsLinks = styled(StyledLinks)`
+export const __ButtonsLinks = styled(__Links)`
 	gap: 10px;
 `;

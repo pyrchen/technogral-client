@@ -7,7 +7,7 @@ import { FC, useState } from 'react';
 
 import { ContentContainer } from '@/components';
 import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
-import { StyledAppHeader, StyledButtonsLinks, StyledGrid, StyledLinks } from '@/components/AppHeader/AppHeader.styled';
+import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags } from '@/constants/text.contants';
 import { Button, TextInput, TypoText } from '@/uikit';
 
@@ -16,16 +16,16 @@ const AppHeader: FC = () => {
 	const theme = useTheme();
 
 	return (
-		<StyledAppHeader>
+		<__AppHeader>
 			<ContentContainer>
-				<StyledGrid>
+				<__Grid>
 					<div>logo</div>
 					<TextInput
 						placeholder={'hello'}
 						value={value}
 						onInput={(event) => setValue((event.target as HTMLInputElement).value)}
 					/>
-					<StyledLinks>
+					<__Links>
 						{links.map(({ name, link }) => {
 							return (
 								<Link
@@ -42,8 +42,8 @@ const AppHeader: FC = () => {
 								</Link>
 							);
 						})}
-					</StyledLinks>
-					<StyledButtonsLinks>
+					</__Links>
+					<__ButtonsLinks>
 						{buttonLinks.map(({ name, link }) => {
 							return (
 								<Link
@@ -54,10 +54,10 @@ const AppHeader: FC = () => {
 								</Link>
 							);
 						})}
-					</StyledButtonsLinks>
-				</StyledGrid>
+					</__ButtonsLinks>
+				</__Grid>
 			</ContentContainer>
-		</StyledAppHeader>
+		</__AppHeader>
 	);
 };
 

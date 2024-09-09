@@ -25,9 +25,9 @@ const createStyledTypoText = (tag: TextTags) => styled(tag)<ITypoTextProps>`
 
 // Create object of styled elements in order to avoid react errors when creating
 // styled element inside a component
-const StyledTypeTextElements = Object.values(TextTags).reduce((acc, tag) => {
+const __TypeTextElements = Object.values(TextTags).reduce((acc, tag) => {
 	acc[tag] = createStyledTypoText(tag);
 	return acc;
 }, {} as TStyledTypoTextElements);
 
-export default StyledTypeTextElements;
+export default __TypeTextElements;

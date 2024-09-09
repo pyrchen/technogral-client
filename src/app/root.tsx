@@ -6,7 +6,7 @@ import React, { PropsWithChildren } from 'react';
 
 import { AppFooter, AppHeader } from '@/components';
 
-const StyledPageContainer = styled.div`
+const __PageContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -15,7 +15,7 @@ const StyledPageContainer = styled.div`
 	overflow-x: hidden;
 `;
 
-const StyledMainContainer = styled.main`
+const __MainContainer = styled.main`
 	flex: 1 1 0;
 	width: 100%;
 	margin: 0 auto;
@@ -23,13 +23,13 @@ const StyledMainContainer = styled.main`
 
 export default function RootComponent({ children }: PropsWithChildren) {
 	return (
-		<StyledPageContainer
+		<__PageContainer
 			id='root'
 			className='root'
 		>
 			<AppHeader />
-			<StyledMainContainer>{children}</StyledMainContainer>
+			<__MainContainer>{children}</__MainContainer>
 			<AppFooter />
-		</StyledPageContainer>
+		</__PageContainer>
 	);
 }
