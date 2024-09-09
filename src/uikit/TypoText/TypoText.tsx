@@ -12,6 +12,7 @@ const TypoText: FC<ITypoTextProps> = ({
 	as = TextTags.SPAN,
 	weight = TextWeights.NORMAL,
 	fontSize = 16,
+	lineHeight = fontSize,
 	decoration = 'none',
 	...props
 }) => {
@@ -19,9 +20,10 @@ const TypoText: FC<ITypoTextProps> = ({
 
 	return (
 		<__TextElement
-			weight={weight}
-			fontSize={fontSize}
-			decoration={decoration}
+			$weight={weight}
+			$fontSize={fontSize}
+			$decoration={decoration}
+			$lineHeight={lineHeight}
 			{...props}
 		>
 			{children || text}

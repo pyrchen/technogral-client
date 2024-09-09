@@ -7,6 +7,7 @@ import { ContentContainer } from '@/components';
 import { contactData, links1, links2, socialData } from '@/components/AppFooter/AppFooter.constants';
 import { InfoWithIcon } from '@/components/AppFooter/InfoWithIcon';
 import { TextTags, TextWeights } from '@/constants/text.contants';
+import { EveryWithDollarSign } from '@/types/styled.types';
 import { Button, Divider, TypoText } from '@/uikit';
 import { toPx } from '@/utils/formatting.utils';
 
@@ -20,19 +21,19 @@ const __AppFooter = styled.footer`
 	background-color: ${({ theme }) => theme.MAIN.MAIN_5};
 `;
 
-const __BlocksWrapper = styled.div<IStyledBlocksWrapperProps>`
+const __BlocksWrapper = styled.div<EveryWithDollarSign<IStyledBlocksWrapperProps>>`
 	display: grid;
-	grid-template-columns: ${(props) => `repeat(${props.columns}, 1fr)`};
+	grid-template-columns: ${(props) => `repeat(${props.$columns}, 1fr)`};
 	grid-template-rows: 1fr;
 	gap: 31px;
-	padding: ${(props) => props.padding};
+	padding: ${(props) => props.$padding};
 `;
 
-const __FooterLinks = styled.div<{ gap?: number }>`
+const __FooterLinks = styled.div<EveryWithDollarSign<{ gap?: number }>>`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: ${({ gap }) => toPx(gap || 15)};
+	gap: ${({ $gap }) => toPx($gap || 15)};
 `;
 
 const __AdsBlock = styled.div`
@@ -83,7 +84,7 @@ const FooterLinks = () => {
 	);
 
 	const literalContactData = (
-		<__FooterLinks gap={18}>
+		<__FooterLinks $gap={18}>
 			{contactData.map(({ Icon, text }) => {
 				return (
 					<InfoWithIcon
@@ -145,19 +146,19 @@ const FooterLinks = () => {
 
 	return (
 		<__BlocksWrapper
-			padding={'65px 0 25px'}
-			columns={2}
+			$padding={'65px 0 25px'}
+			$columns={2}
 		>
 			<__BlocksWrapper
-				padding={'0'}
-				columns={2}
+				$padding={'0'}
+				$columns={2}
 			>
 				{askingLinks}
 				{literalContactData}
 			</__BlocksWrapper>
 			<__BlocksWrapper
-				padding={'0'}
-				columns={3}
+				$padding={'0'}
+				$columns={3}
 			>
 				{socialsButtons}
 				{rulesAndWishesLinks}
@@ -198,7 +199,7 @@ const AdditionalFooterData = () => {
 			>
 				По вопросам рекламы
 			</TypoText>
-			<__FooterLinks gap={10}>
+			<__FooterLinks $gap={10}>
 				{contactData.map(({ Icon, text }) => {
 					return (
 						<InfoWithIcon
@@ -215,18 +216,18 @@ const AdditionalFooterData = () => {
 
 	return (
 		<__BlocksWrapper
-			columns={2}
-			padding={'40px 0 43px'}
+			$columns={2}
+			$padding={'40px 0 43px'}
 		>
 			<__BlocksWrapper
-				columns={2}
-				padding={'0'}
+				$columns={2}
+				$padding={'0'}
 			>
 				{textLinks}
 			</__BlocksWrapper>
 			<__BlocksWrapper
-				columns={1}
-				padding={'0'}
+				$columns={1}
+				$padding={'0'}
 			>
 				{adsQuestions}
 			</__BlocksWrapper>

@@ -13,7 +13,7 @@ const TextInput: FC<ITextInputProps> = ({
 	...props
 }) => {
 	return (
-		<__InputWrapper size={size}>
+		<__InputWrapper $size={size}>
 			{leftAddon}
 			<__Input
 				value={value}
