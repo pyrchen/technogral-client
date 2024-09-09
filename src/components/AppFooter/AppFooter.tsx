@@ -49,7 +49,7 @@ const __SocialsBlock = styled(__AdsBlock)`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 6px;
+		gap: 10px;
 	}
 `;
 
@@ -144,7 +144,7 @@ const FooterLinks = () => {
 
 	const orderBoost = (
 		<Button
-			size='large'
+			size='medium'
 			variant='filled'
 		>
 			Заказать разгон
