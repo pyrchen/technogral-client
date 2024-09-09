@@ -6,6 +6,6 @@ export const links = [
 
 export const buttonLinks = [
 	{ name: 'Заказать разгон', link: 'boost' },
-	{ name: 'Войти', link: 'signin' },
-	{ name: 'Регистрация', link: 'signup' },
+	{ name: 'Войти', link: '/auth/signin' },
+	{ name: 'Регистрация', link: '/auth/signup' },
 ];

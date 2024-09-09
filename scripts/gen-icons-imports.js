@@ -13,7 +13,6 @@ main();
 async function main() {
 	// fs.writeFileSync(createFilePath('index.ts'), '');
 	const filenames = await getIconsNames();
-	console.log(filenames);
 	const templateImports = createImportsTemplate(filenames);
 	const templateExports = createExportTemplate(filenames);
 
@@ -25,6 +24,10 @@ async function main() {
 	 ${templateExports}
 	`
 	);
+
+	filenames.forEach((filename) => {
+		console.log(createIconComponentName(filename));
+	});
 }
 
 async function getIconsNames() {

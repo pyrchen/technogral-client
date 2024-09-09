@@ -20,7 +20,7 @@ async function main() {
 	await sleep(500);
 	checkDir(destinationDirectoryPath);
 	createComponentFiles();
-	createComponentIndexFile();
+	// createComponentIndexFile();
 	stopLoader();
 }
 
