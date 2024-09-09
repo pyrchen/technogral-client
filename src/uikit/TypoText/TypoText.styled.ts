@@ -1,21 +1,26 @@
 import styled from 'styled-components';
 
 import { TextTags } from '@/constants/text.contants';
-import { TStyledPropsPicker } from '@/types/styled.types';
+import { TPickers } from '@/types/styled.types';
 import { ITypoTextProps } from '@/uikit/TypoText/TypoText.types';
 import { toPx } from '@/utils/formatting.utils';
 
-type TPicker = TStyledPropsPicker<Omit<ITypoTextProps, 'as'>>;
 type TStyledTypoTextElements = Record<TextTags, ReturnType<typeof createStyledTypoText>>;
 
-const fontSize: TPicker = ({ fontSize }) => toPx(fontSize!);
-const color: TPicker = ({ color }) => color!;
+const Picks: TPickers<Omit<ITypoTextProps, 'as'>> = {
+	fontSize: ({ fontSize }) => toPx(fontSize!),
+	color: ({ color }) => color!,
+	fontWeight: ({ weight }) => `${weight!}`,
+	textDecoration: ({ decoration }) => decoration || 'none',
+};
 
-const createStyledTypoText = (tag: TextTags) => styled(tag)`
+const createStyledTypoText = (tag: TextTags) => styled(tag)<ITypoTextProps>`
 	display: inline-flex;
-	font-size: ${fontSize};
-	line-height: ${fontSize};
-	color: ${color};
+	font-size: ${Picks.fontSize};
+	font-weight: ${Picks.fontWeight};
+	line-height: ${Picks.fontSize};
+	color: ${Picks.color};
+	text-decoration: ${Picks.textDecoration};
 `;
 
 // Create object of styled elements in order to avoid react errors when creating

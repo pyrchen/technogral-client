@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "script:generate:component": "node scripts/generate-component.js"
+    "script:gen:component": "node scripts/generate-component.js",
+    "script:gen:icons": "node scripts/gen-icons-imports.js && eslint --fix ./src/icons/index.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -17,6 +18,7 @@
     "styled-components": "^6.1.12"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
