@@ -17,7 +17,6 @@ const Picks: TPickers<Omit<EveryWithDollarSign<ITypoTextProps>, '$as'>> = {
 };
 
 const createStyledTypoText = (tag: TextTags) => styled(tag)<EveryWithDollarSign<ITypoTextProps>>`
-	display: inline-flex;
 	font-size: ${Picks.fontSize};
 	font-weight: ${Picks.fontWeight};
 	line-height: ${Picks.lineHeight};
