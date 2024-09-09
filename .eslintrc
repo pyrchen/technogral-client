@@ -4,6 +4,7 @@
     "es2024": true
   },
   "extends": [
+    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/recommended",
@@ -50,7 +51,8 @@
       },
       {
         "format": ["camelCase", "UPPER_CASE", "PascalCase"],
-        "selector": "variable"
+        "selector": "variable",
+        "leadingUnderscore": "allowSingleOrDouble"
       },
       {
         "format": null,
@@ -66,7 +68,8 @@
       }
     ],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-object-type": "off",
   },
   "ignorePatterns": ["scripts/**/*", "babel.config.js"]
 }

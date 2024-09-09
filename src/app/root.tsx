@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import React, { FC, PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import { AppFooter, AppHeader } from '@/components';
 
@@ -21,7 +21,7 @@ const StyledMainContainer = styled.main`
 	margin: 0 auto;
 `;
 
-const Content: FC<PropsWithChildren> = ({ children }) => {
+export default function RootComponent({ children }: PropsWithChildren) {
 	return (
 		<StyledPageContainer
 			id='root'
@@ -32,8 +32,4 @@ const Content: FC<PropsWithChildren> = ({ children }) => {
 			<AppFooter />
 		</StyledPageContainer>
 	);
-};
-
-export default function RootComponent({ children }: PropsWithChildren) {
-	return <Content>{children}</Content>;
 }
