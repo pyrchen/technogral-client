@@ -2,17 +2,17 @@
 
 import { FC } from 'react';
 
-import StyledButton from './Button.styled';
+import __Button from './Button.styled';
 import { IButtonProps } from './Button.types';
 
 const Button: FC<IButtonProps> = ({ children, size = 'medium', ...props }) => {
 	return (
-		<StyledButton
+		<__Button
 			size={size}
 			{...props}
 		>
 			{children}
-		</StyledButton>
+		</__Button>
 	);
 };
 
