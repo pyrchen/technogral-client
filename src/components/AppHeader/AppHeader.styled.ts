@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const __AppHeader = styled.div`
-	padding: 35px 0;
+	padding: 35px 0 0 0;
 `;
 
 export const __Grid = styled.div`

@@ -14,6 +14,8 @@ const TypoText: FC<ITypoTextProps> = ({
 	fontSize = 16,
 	lineHeight = fontSize,
 	decoration = 'none',
+	transform = 'none',
+	color = '#000000',
 	...props
 }) => {
 	const __TextElement = __TypeTextElements[as];
@@ -24,6 +26,8 @@ const TypoText: FC<ITypoTextProps> = ({
 			$fontSize={fontSize}
 			$decoration={decoration}
 			$lineHeight={lineHeight}
+			$color={color}
+			$transform={transform}
 			{...props}
 		>
 			{children || text}

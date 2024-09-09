@@ -11,18 +11,19 @@ const Picks: TPickers<Omit<EveryWithDollarSign<ITypoTextProps>, '$as'>> = {
 	fontSize: ({ $fontSize }) => toPx($fontSize!),
 	color: ({ $color }) => $color!,
 	fontWeight: ({ $weight }) => `${$weight!}`,
-	textDecoration: ({ $decoration }) => $decoration || 'none',
 	lineHeight: ({ $lineHeight }) => toPx($lineHeight!),
+	textDecoration: ({ $decoration }) => $decoration || 'none',
+	textTransform: ({ $transform }) => $transform || 'none',
 };
 
 const createStyledTypoText = (tag: TextTags) => styled(tag)<EveryWithDollarSign<ITypoTextProps>>`
 	display: inline-flex;
 	font-size: ${Picks.fontSize};
 	font-weight: ${Picks.fontWeight};
-	line-height: ${Picks.fontSize};
-	color: ${Picks.color};
-	text-decoration: ${Picks.textDecoration};
 	line-height: ${Picks.lineHeight};
+	text-decoration: ${Picks.textDecoration};
+	text-transform: ${Picks.textTransform};
+	color: ${Picks.color};
 `;
 
 // Create object of styled elements in order to avoid react errors when creating

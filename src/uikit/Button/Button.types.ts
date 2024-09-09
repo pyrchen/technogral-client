@@ -6,6 +6,11 @@ type TButtonWithChildren = PropsWithChildren<
 	DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 >;
 
-export interface IButtonProps extends TButtonWithChildren {
+export type TButtonVariants = 'filled' | 'outlined';
+
+export interface IButtonProps {
 	size?: TButtonSize;
+	variant?: TButtonVariants;
 }
+
+export interface IButtonComponentsProps extends TButtonWithChildren, IButtonProps {}

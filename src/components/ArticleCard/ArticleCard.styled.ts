@@ -68,6 +68,13 @@ const __InfoLikesDislikes = styled.div`
 	gap: 15px;
 `;
 
+const __InfoStatBlockWithIcon = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 5px;
+`;
+
 export const ArticleParts = {
 	__ArticleCardWrapper,
 	__ArticleInfoWrapper,
@@ -79,4 +86,5 @@ export const ArticleParts = {
 	__InfoStatBlock,
 	__ArticleInfo,
 	__InfoLikesDislikes,
+	__InfoStatBlockWithIcon,
 };

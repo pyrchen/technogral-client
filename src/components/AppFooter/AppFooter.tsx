@@ -3,7 +3,7 @@ import styled, { useTheme } from 'styled-components';
 
 import { FC } from 'react';
 
-import { ContentContainer } from '@/components';
+import { ContentContainer, Logo } from '@/components';
 import { contactData, links1, links2, socialData } from '@/components/AppFooter/AppFooter.constants';
 import { InfoWithIcon } from '@/components/AppFooter/InfoWithIcon';
 import { TextTags, TextWeights } from '@/constants/text.contants';
@@ -142,7 +142,14 @@ const FooterLinks = () => {
 		</__FooterLinks>
 	);
 
-	const orderBoost = <Button size='large'>Заказать разгон</Button>;
+	const orderBoost = (
+		<Button
+			size='large'
+			variant='filled'
+		>
+			Заказать разгон
+		</Button>
+	);
 
 	return (
 		<__BlocksWrapper
@@ -259,8 +266,6 @@ const CompanyData = () => {
 		</__CompanyData>
 	);
 };
-
-const Logo = () => <div>Logo</div>;
 
 const AppFooter: FC = () => {
 	const theme = useTheme();
