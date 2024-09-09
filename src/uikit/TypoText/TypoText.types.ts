@@ -12,4 +12,5 @@ export interface ITypoTextProps extends PropsWithChildren {
 	text?: string;
 	decoration?: Property.TextDecoration;
 	lineHeight?: number;
+	transform?: Property.TextTransform;
 }

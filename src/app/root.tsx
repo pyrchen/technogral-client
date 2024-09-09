@@ -18,7 +18,7 @@ const __PageContainer = styled.div`
 const __MainContainer = styled.main`
 	flex: 1 1 0;
 	width: 100%;
-	margin: 0 auto;
+	margin: 70px auto 100px;
 `;
 
 export default function RootComponent({ children }: PropsWithChildren) {

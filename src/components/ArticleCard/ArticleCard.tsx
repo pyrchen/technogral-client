@@ -1,6 +1,8 @@
 import { TextWeights } from '@/constants/text.contants';
+import { MessageWindowIcon, ThumbUpIcon } from '@/icons';
 import { TypoText } from '@/uikit';
 import Avatar from '@/uikit/Avatar/Avatar';
+import { formatIntNumber } from '@/utils/formatting.utils';
 
 import { ArticleParts } from './ArticleCard.styled';
 
@@ -10,6 +12,7 @@ const ArticleCard = () => {
 			weight={TextWeights.MEDIUM}
 			fontSize={18}
 			lineHeight={23.4}
+			color={'#0A0A0A'}
 		>
 			RTX 4070 станет более доступной к покупке 7 августа
 		</TypoText>
@@ -21,8 +24,8 @@ const ArticleCard = () => {
 			<TypoText
 				weight={TextWeights.MEDIUM}
 				fontSize={14}
-				color={'#0A0A0A'}
 				lineHeight={18.2}
+				color={'#0A0A0A'}
 			>
 				Олег Вещий
 			</TypoText>
@@ -40,20 +43,28 @@ const ArticleCard = () => {
 				2 часа назад
 			</TypoText>
 			<ArticleParts.__InfoLikesDislikes>
-				<TypoText
-					weight={TextWeights.MEDIUM}
-					fontSize={14}
-					lineHeight={18.2}
-				>
-					1991
-				</TypoText>
-				<TypoText
-					weight={TextWeights.MEDIUM}
-					fontSize={14}
-					lineHeight={18.2}
-				>
-					20054
-				</TypoText>
+				<ArticleParts.__InfoStatBlockWithIcon>
+					<ThumbUpIcon />
+					<TypoText
+						weight={TextWeights.MEDIUM}
+						fontSize={14}
+						lineHeight={18.2}
+						color={'#373737'}
+					>
+						{formatIntNumber(1991)}
+					</TypoText>
+				</ArticleParts.__InfoStatBlockWithIcon>
+				<ArticleParts.__InfoStatBlockWithIcon>
+					<MessageWindowIcon />
+					<TypoText
+						weight={TextWeights.MEDIUM}
+						fontSize={14}
+						lineHeight={18.2}
+						color={'#373737'}
+					>
+						{formatIntNumber(20054)}
+					</TypoText>
+				</ArticleParts.__InfoStatBlockWithIcon>
 			</ArticleParts.__InfoLikesDislikes>
 		</ArticleParts.__InfoStatBlock>
 	);
