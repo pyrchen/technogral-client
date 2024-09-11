@@ -6,7 +6,6 @@ const { startLoader, stopLoader } = Loader.createLoader();
 
 const componentName = process.argv[2];
 const destination = process.argv[3];
-console.log(process.argv);
 
 const destinationDirectoryPath = path.resolve(__dirname, `../src/${destination}/`);
 const destinationNewDirectoryPath = path.join(destinationDirectoryPath, componentName);
