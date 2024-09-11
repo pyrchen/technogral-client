@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "script:gen:component": "node scripts/generate-component.js && npm run lint:imports",
+    "script:gen:component": "node scripts/generate-component.js",
     "script:gen:imports": "node scripts/gen-index-imports.js && npm run lint:imports",
     "lint:imports": "eslint --fix ./src/icons/index.ts && eslint --fix ./src/components/index.ts && eslint --fix ./src/uikit/index.ts"
   },

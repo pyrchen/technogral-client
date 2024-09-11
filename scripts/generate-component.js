@@ -1,13 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 const Loader = require('./_loader');
-const generateImports = require('./gen-index-imports');
 
 const { startLoader, stopLoader } = Loader.createLoader();
 
 const componentName = process.argv[2];
 const destination = process.argv[3];
-console.log(process.argv);
 
 const destinationDirectoryPath = path.resolve(__dirname, `../src/${destination}/`);
 const destinationNewDirectoryPath = path.join(destinationDirectoryPath, componentName);
@@ -22,7 +20,6 @@ async function main() {
 	await sleep(500);
 	checkDir(destinationDirectoryPath);
 	createComponentFiles();
-	await generateImports();
 	stopLoader();
 }
 
