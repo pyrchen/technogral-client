@@ -27,8 +27,6 @@ async function main() {
 	stopLoader();
 }
 
-module.exports = main;
-
 async function createIconsImports() {
 	const filenames = await getFilesNames(iconsPath);
 	const templateImports = createImportsTemplate(filenames, createIconComponentName, (filename) => `./${filename}`);

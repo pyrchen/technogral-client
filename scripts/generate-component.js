@@ -1,7 +1,6 @@
 const path = require('path');
 const fs = require('fs');
 const Loader = require('./_loader');
-const generateImports = require('./gen-index-imports');
 
 const { startLoader, stopLoader } = Loader.createLoader();
 
@@ -22,7 +21,6 @@ async function main() {
 	await sleep(500);
 	checkDir(destinationDirectoryPath);
 	createComponentFiles();
-	await generateImports();
 	stopLoader();
 }
 
