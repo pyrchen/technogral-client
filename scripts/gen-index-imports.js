@@ -12,7 +12,9 @@ const iconsPath = path.join(destinationDirectoryPath, 'icons');
 const componentsPath = path.join(destinationDirectoryPath, 'components');
 const uikitPath = path.join(destinationDirectoryPath, 'uikit');
 
-(async function main() {
+main();
+
+async function main() {
 	const fns = [createIconsImports, createComponentsImports, createUikitImports];
 
 	startLoader();
@@ -23,7 +25,9 @@ const uikitPath = path.join(destinationDirectoryPath, 'uikit');
 	}
 
 	stopLoader();
-})();
+}
+
+module.exports = main;
 
 async function createIconsImports() {
 	const filenames = await getFilesNames(iconsPath);
