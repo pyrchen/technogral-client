@@ -1,6 +1,11 @@
 import { EmailIcon, LocationIcon, PhoneIcon, VkIcon, YoutubeIcon } from '@/icons';
 
-export const links1 = [
+interface ILink {
+	name: string;
+	link: string;
+}
+
+export const links1: ILink[] = [
 	{ name: 'Контакты', link: '' },
 	{ name: 'FAQ', link: '' },
 	{ name: 'Брендинг', link: '' },

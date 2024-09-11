@@ -21,7 +21,7 @@ const __MainContainer = styled.main`
 	margin: 70px auto 100px;
 `;
 
-export default function RootComponent({ children }: PropsWithChildren) {
+export default function MainPageLayout({ children }: PropsWithChildren) {
 	return (
 		<__PageContainer
 			id='root'

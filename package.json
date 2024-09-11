@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "script:gen:component": "node scripts/generate-component.js",
-    "script:gen:icons": "node scripts/gen-icons-imports.js && eslint --fix ./src/icons/index.ts"
+    "script:gen:imports": "node scripts/gen-index-imports.js && eslint --fix ./src/icons/index.ts && eslint --fix ./src/components/index.ts && eslint --fix ./src/uikit/index.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

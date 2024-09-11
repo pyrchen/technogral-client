@@ -11,6 +11,7 @@ const Picks: TPickers<__Props> = {
 	borderColor: ({ theme }) => theme.MAIN.MAIN_2,
 	bgColor: ({ theme }) => theme.MAIN.MAIN_5,
 	height: ({ $size }) => toPx($size === 'medium' ? 50 : 60),
+	width: ({ $fullWidth }) => ($fullWidth ? '100%' : 'auto'),
 };
 
 export const __Input = styled.input<EveryWithDollarSign<ITextInputProps>>`
@@ -18,6 +19,10 @@ export const __Input = styled.input<EveryWithDollarSign<ITextInputProps>>`
 	font-size: 16px;
 	font-weight: ${TextWeights.MEDIUM};
 	background-color: transparent;
+
+	&::placeholder {
+		color: #b7b7b7;
+	}
 `;
 
 export const __InputWrapper = styled.div<EveryWithDollarSign<ITextInputProps>>`
@@ -28,4 +33,5 @@ export const __InputWrapper = styled.div<EveryWithDollarSign<ITextInputProps>>`
 	gap: 8px;
 	padding: 11px 12px;
 	background-color: ${Picks.bgColor};
+	width: ${Picks.width};
 `;

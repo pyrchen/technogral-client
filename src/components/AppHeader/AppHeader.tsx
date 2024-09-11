@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useTheme } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
 import { FC, useState } from 'react';
 
@@ -10,6 +10,15 @@ import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
 import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
 import { Button, TextInput, TypoText } from '@/uikit';
+import { createFlexStyles } from '@/utils/styled.utils';
+
+const __LinkStyled = styled.div`
+	${createFlexStyles('inline-flex')}
+
+	& > a[href] {
+		${createFlexStyles('inline-flex')}
+	}
+`;
 
 const AppHeader: FC = () => {
 	const [value, setValue] = useState('hello');
@@ -19,9 +28,11 @@ const AppHeader: FC = () => {
 		<__AppHeader>
 			<ContentContainer>
 				<__Grid>
-					<Link href={'/'}>
-						<Logo />
-					</Link>
+					<__LinkStyled>
+						<Link href={'/'}>
+							<Logo />
+						</Link>
+					</__LinkStyled>
 					<TextInput
 						placeholder={'hello'}
 						value={value}

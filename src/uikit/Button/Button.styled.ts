@@ -12,6 +12,7 @@ const bgColorHoverPicker: TPicker = ({ theme }) => theme.button.hover;
 const colorPicker: TPicker = ({ theme }) => theme.MAIN.MAIN_5;
 const heightPicker: TPicker = ({ $size }) => toPx(ButtonSizes[$size!]);
 const fontSizePicker: TPicker = ({ $size }) => toPx(ButtonFontSizes[$size!]);
+const widthPicker: TPicker = ({ $fullWidth }) => ($fullWidth ? '100%' : 'auto');
 
 const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'variant'>>>`
 	display: inline-flex;
@@ -19,6 +20,7 @@ const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'varia
 	justify-content: center;
 	color: ${colorPicker};
 	height: ${heightPicker};
+	width: ${widthPicker};
 	font-size: ${fontSizePicker};
 	font-weight: 500;
 	padding: 10px 15px 10px 15px;
