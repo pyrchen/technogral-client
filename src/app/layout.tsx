@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 
 import { GlobalStyles } from '@/app/global';
-import RootComponent from '@/app/root';
 import StyledComponentsRegistry from '@/lib/registry';
 import StyledComponentsThemeRegistry from '@/lib/themeRegistry';
 
@@ -21,9 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 			<body className={inter.className}>
 				<GlobalStyles />
 				<StyledComponentsRegistry>
-					<StyledComponentsThemeRegistry>
-						<RootComponent>{children}</RootComponent>
-					</StyledComponentsThemeRegistry>
+					<StyledComponentsThemeRegistry>{children}</StyledComponentsThemeRegistry>
 				</StyledComponentsRegistry>
 			</body>
 		</html>

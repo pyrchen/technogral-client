@@ -1,10 +1,11 @@
 import { Property } from 'csstype';
 
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 
 import { TextTags, TextWeights } from '@/constants/text.contants';
+import { TAny } from '@/types/base';
 
-export interface ITypoTextProps extends PropsWithChildren {
+export interface ITypoTextProps extends PropsWithChildren<HTMLAttributes<TAny>> {
 	as?: TextTags;
 	fontSize?: number;
 	weight?: TextWeights;

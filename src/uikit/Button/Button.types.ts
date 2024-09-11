@@ -11,6 +11,7 @@ export type TButtonVariants = 'filled' | 'outlined';
 export interface IButtonProps {
 	size?: TButtonSize;
 	variant?: TButtonVariants;
+	fullWidth?: boolean;
 }
 
 export interface IButtonComponentsProps extends TButtonWithChildren, IButtonProps {}
