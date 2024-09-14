@@ -12,6 +12,8 @@ import SettingCardList from './SettingCardList/SettingCardList';
 import SideButtons from './SideButtons/SideButtons';
 import SignInForm from './SignInForm/SignInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
+import Tab from './Tab/Tab';
+import Tabs from './Tabs/Tabs';
 
 export {
 	AppFooter,
@@ -28,4 +30,6 @@ export {
 	SideButtons,
 	SignInForm,
 	SignUpForm,
+	Tab,
+	Tabs,
 };

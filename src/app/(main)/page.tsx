@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { ArticlesList, ContentContainer, PageBanner, SideButtons } from '@/components';
+import { ArticlesList, ContentContainer, PageBanner, SideButtons, Tabs } from '@/components';
 import { TextWeights } from '@/constants/text.contants';
 import { AllFiltersIcon } from '@/icons';
 import { Button, TypoText } from '@/uikit';
@@ -34,6 +34,7 @@ export default function Home() {
 			<__Banner>
 				<PageBanner />
 			</__Banner>
+			<Tabs />
 			<TypoText
 				fontSize={28}
 				weight={TextWeights.SEMI_BOLD}
