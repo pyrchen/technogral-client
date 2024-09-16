@@ -10,7 +10,12 @@ const Tab: FC<ITabComponentProps> = ({ tabName, active = true, ...props }) => {
 			$active={active}
 			{...props}
 		>
-			<TypoText>{tabName}</TypoText>
+			<TypoText
+				color={active ? '#565656' : '#BCBCBC'}
+				fontSize={16}
+			>
+				{tabName}
+			</TypoText>
 			<TabParts.__TabUnderline />
 		</TabParts.__TabWrapper>
 	);

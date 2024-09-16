@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, useState } from 'react';
 
 import { __Input, __InputWrapper } from '@/uikit/TextInput/TextInput.styled';
