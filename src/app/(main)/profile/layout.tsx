@@ -8,7 +8,7 @@ import { ContentContainer, Tabs } from '@/components';
 
 const ROUTE_PREFIX = '/profile';
 const subRoutes = [
-	{ path: `${ROUTE_PREFIX}/`, title: 'Персональная информация' },
+	{ path: `${ROUTE_PREFIX}`, title: 'Персональная информация' },
 	{ path: `${ROUTE_PREFIX}/security`, title: 'Безопасность' },
 	{ path: `${ROUTE_PREFIX}/stats`, title: 'Статистика' },
 	{ path: `${ROUTE_PREFIX}/settings`, title: 'Настройка сайта' },
