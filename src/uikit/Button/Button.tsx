@@ -11,19 +11,21 @@ const Button: FC<IButtonComponentsProps> = ({
 	variant = 'outlined',
 	size = 'medium',
 	fullWidth = false,
+	leftAddon = null,
+	rightAddon = null,
 	...props
 }) => {
 	const __Button = ButtonVariants[variant];
 
 	return (
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-expect-error
 		<__Button
 			$size={size}
 			$fullWidth={fullWidth}
 			{...props}
 		>
+			{leftAddon}
 			{children}
+			{rightAddon}
 		</__Button>
 	);
 };

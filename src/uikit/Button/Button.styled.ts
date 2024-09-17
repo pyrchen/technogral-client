@@ -18,6 +18,7 @@ const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'varia
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	gap: 10px;
 	color: ${colorPicker};
 	height: ${heightPicker};
 	width: ${widthPicker};

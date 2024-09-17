@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import { EveryWithDollarSign, TPickers } from '@/types/styled.types';
 import { IAvatarProps } from '@/uikit/Avatar/Avatar.types';
 import { toPx } from '@/utils/formatting.utils';
+import { isString } from '@/utils/typesChecking.utils';
 
 type __Props = EveryWithDollarSign<Omit<IAvatarProps, 'url'>>;
 
 const Picks: TPickers<__Props> = {
-	width: ({ $width }) => toPx($width),
+	width: ({ $width }) => (isString($width) ? $width : toPx($width)),
 };
 
 const __AvatarWrapper = styled.div<__Props>`
