@@ -60,7 +60,8 @@
       },
       {
         "format": ["PascalCase"],
-        "selector": "typeLike"
+        "selector": "typeLike",
+        "leadingUnderscore": "allowSingleOrDouble"
       },
       {
         "format": ["UPPER_CASE", "PascalCase"],

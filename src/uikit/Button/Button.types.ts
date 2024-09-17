@@ -1,10 +1,6 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export type TButtonSize = 'small' | 'medium' | 'large';
-
-type TButtonWithChildren = PropsWithChildren<
-	DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
->;
 
 export type TButtonVariants = 'filled' | 'outlined';
 
@@ -12,6 +8,8 @@ export interface IButtonProps {
 	size?: TButtonSize;
 	variant?: TButtonVariants;
 	fullWidth?: boolean;
+	leftAddon?: ReactNode;
+	rightAddon?: ReactNode;
 }
 
-export interface IButtonComponentsProps extends TButtonWithChildren, IButtonProps {}
+export interface IButtonComponentsProps extends ButtonHTMLAttributes<HTMLButtonElement>, IButtonProps {}
