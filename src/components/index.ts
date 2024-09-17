@@ -1,3 +1,5 @@
+import Accordion from './Accordion/Accordion';
+import AccordionList from './AccordionList/AccordionList';
 import AdvancedInputBlock from './AdvancedInputBlock/AdvancedInputBlock';
 import AppFooter from './AppFooter/AppFooter';
 import AppHeader from './AppHeader/AppHeader';
@@ -23,6 +25,8 @@ import UserRole from './UserRole/UserRole';
 import UserStatistics from './UserStatistics/UserStatistics';
 
 export {
+	Accordion,
+	AccordionList,
 	AdvancedInputBlock,
 	AppFooter,
 	AppHeader,

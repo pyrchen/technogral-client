@@ -1,4 +1,5 @@
 import AllFiltersIcon from './all-filters-icon.svg';
+import ArrowBottomIcon from './arrow-bottom-icon.svg';
 import ArrowTopNoTailIcon from './arrow-top-no-tail-icon.svg';
 import EmailIcon from './email-icon.svg';
 import LoadPictureIcon from './load-picture-icon.svg';
@@ -20,6 +21,7 @@ import YoutubeIcon from './youtube-icon.svg';
 
 export {
 	AllFiltersIcon,
+	ArrowBottomIcon,
 	ArrowTopNoTailIcon,
 	EmailIcon,
 	LoadPictureIcon,

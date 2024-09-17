@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export type TButtonSize = 'small' | 'medium' | 'large';
 
-export type TButtonVariants = 'filled' | 'outlined';
+export type TButtonVariants = 'filled' | 'outlined' | 'none';
 
 export interface IButtonProps {
 	size?: TButtonSize;

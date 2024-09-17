@@ -49,7 +49,16 @@ const __OutlinedButton = styled(__ButtonBase)`
 	color: ${({ theme }) => theme.text.TEXT_2};
 `;
 
+const __NoneButton = styled(__ButtonBase)`
+	border: none;
+	color: #7c7c7c;
+	background-color: white;
+	padding: 0;
+	height: auto;
+`;
+
 export const ButtonVariants = {
 	filled: __FilledButton,
 	outlined: __OutlinedButton,
+	none: __NoneButton,
 } as const;
