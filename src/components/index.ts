@@ -1,3 +1,5 @@
+import Accordion from './Accordion/Accordion';
+import AccordionList from './AccordionList/AccordionList';
 import AppFooter from './AppFooter/AppFooter';
 import AppHeader from './AppHeader/AppHeader';
 import ArticleCard from './ArticleCard/ArticleCard';
@@ -16,6 +18,8 @@ import Tab from './Tab/Tab';
 import Tabs from './Tabs/Tabs';
 
 export {
+	Accordion,
+	AccordionList,
 	AppFooter,
 	AppHeader,
 	ArticleCard,
