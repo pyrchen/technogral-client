@@ -1,6 +1,8 @@
 import { Property } from 'csstype';
 
+import { TextWeights } from '@/constants/text.contants';
 import { TNullable } from '@/types/base';
+import { toPx } from '@/utils/formatting.utils';
 import { isNotNull } from '@/utils/typesChecking.utils';
 
 export const createFlexStyles = (
@@ -16,5 +18,30 @@ export const createFlexStyles = (
 		${displayStyle}
 		${alignItemsStyle}
 		${justifyContentStyle}
+	`;
+};
+
+export const createBaseTextStyles = (
+	fontSize: TNullable<number> = 14,
+	weight: TNullable<TextWeights> = TextWeights.NORMAL
+): string => {
+	const fontSizeStyle = isNotNull(fontSize) ? `font-size: ${toPx(fontSize)};` : '';
+	const fontWeightStyle = isNotNull(weight) ? `font-weight: ${weight};` : '';
+
+	return `
+		${fontSizeStyle}
+		${fontWeightStyle}
+	`;
+};
+
+export const createMediumText = (fontSize: TNullable<number> = 14) =>
+	createBaseTextStyles(fontSize, TextWeights.MEDIUM);
+
+export const createTransitionBase = (
+	timing: Property.TransitionDuration = '0.2s',
+	properties: Property.TransitionProperty = 'all'
+) => {
+	return `
+		transition: ${timing} ${properties};
 	`;
 };
