@@ -1,4 +1,4 @@
-import styled, { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 
 import { FC, useEffect, useRef, useState } from 'react';
 
