@@ -268,8 +268,6 @@ const CompanyData = () => {
 };
 
 const AppFooter: FC = () => {
-	const theme = useTheme();
-
 	return (
 		<__AppFooter>
 			<ContentContainer>
