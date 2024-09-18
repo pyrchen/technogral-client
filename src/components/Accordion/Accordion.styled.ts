@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { toPx } from '@/utils/formatting.utils';
+
 const __AccordionWrapper = styled.div`
 	width: 100%;
 	background-color: #fafafa;
@@ -23,7 +25,7 @@ const __AccordionAnswer = styled.div<{ isOpen: boolean; contentHeight: number }>
 	padding: ${({ isOpen }) => (isOpen ? '15px 15px 20px 15px' : '0')};
 	background-color: #ffffff;
 	border-radius: 10px;
-	max-height: ${({ isOpen, contentHeight }) => (isOpen ? `${contentHeight}px` : '0')};
+	max-height: ${({ isOpen, contentHeight }) => (isOpen ? toPx(contentHeight) : '0')};
 	overflow: hidden;
 	transition:
 		max-height 0.3s ease,

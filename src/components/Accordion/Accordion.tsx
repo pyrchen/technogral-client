@@ -12,18 +12,21 @@ import { IAccordionComponentProps } from './Accordion.types';
 const Accordion: FC<IAccordionComponentProps> = ({ question, answer, ...props }) => {
 	const Theme = useTheme();
 
-	const [isOpen, setIsOpen] = useState(false);
-	const toggleAccordion = () => {
-		setIsOpen(!isOpen);
-	};
 	const [contentHeight, setContentHeight] = useState(0); // Состояние для высоты контента
+	const [isOpen, setIsOpen] = useState(false);
 	const contentRef = useRef<HTMLDivElement>(null); // Реф для измерения высоты контента
+
+	const toggleAccordion = () => {
+		setIsOpen((prev) => !prev);
+	};
+
 	useEffect(() => {
 		// Определяем высоту контента при каждом изменении isOpen
-		if (contentRef.current) {
+		if (contentRef.current && isOpen) {
 			setContentHeight(contentRef.current.scrollHeight);
 		}
 	}, [isOpen]);
+
 	return (
 		<AccordionCardParts.__AccordionWrapper
 			{...props}
