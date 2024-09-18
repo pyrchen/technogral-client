@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	basePath: '/project',
 	output: 'export',
-	experimental: {
-		missingSuspenseWithCSRBailout: false,
-	},
 	compiler: {
 		styledComponents: true,
 	},
