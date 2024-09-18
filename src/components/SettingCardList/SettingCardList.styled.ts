@@ -6,6 +6,8 @@ const __SettingCardList = styled.div`
 	justify-content: center;
 	max-width: 100%;
 	gap: 20px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 `;
 
 export const SettingCardListParts = {

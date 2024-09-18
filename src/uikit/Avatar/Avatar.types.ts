@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface IAvatarProps {
-	width: number;
+	width: number | string;
 	url: string;
 }
 
