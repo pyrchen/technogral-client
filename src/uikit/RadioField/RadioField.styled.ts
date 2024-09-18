@@ -77,5 +77,3 @@ export const RadioFieldParts = {
 	__Label,
 	__Text,
 };
-
-function addCircleIfActive() {}

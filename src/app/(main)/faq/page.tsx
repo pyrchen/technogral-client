@@ -1,13 +1,10 @@
 'use client';
 
-import styled, { useTheme } from 'styled-components';
-
 import { AccordionList, ContentContainer } from '@/components';
 import ProfileInput from '@/components/ProfileInput/ProfileInput';
-import { ProgressBar, TextInput } from '@/uikit';
+import { ProgressBar } from '@/uikit';
 
 export default function Home() {
-	const Theme = useTheme();
 	return (
 		<ContentContainer>
 			<AccordionList></AccordionList>

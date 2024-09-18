@@ -2,9 +2,7 @@
 
 import styled from 'styled-components';
 
-import { ContentContainer } from '@/components';
 import { ProfileInputParts } from '@/components/ProfileInput/ProfileInput.styled';
-import { RadioField, RadioFieldsGroup } from '@/uikit';
 
 export default function SecurityPage() {
 	return (
