@@ -1,9 +1,9 @@
 import { TButtonVariants } from '@/uikit/Button/Button.types';
 
 export const links = [
-	{ name: 'Конфигуратор ПК', link: 'configurator' },
-	{ name: 'Контакты', link: 'contacts' },
-	{ name: 'FAQ', link: 'faq' },
+	{ name: 'Конфигуратор ПК', link: '/configurator' },
+	{ name: 'Контакты', link: '/contacts' },
+	{ name: 'FAQ', link: '/faq' },
 ];
 
 export const buttonLinks: {
