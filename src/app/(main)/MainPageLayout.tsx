@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import React, { PropsWithChildren } from 'react';
 
-import { AppFooter, AppHeader } from '@/components';
+import { AppFooter, AppHeader } from '@/components/index';
 
 const __PageContainer = styled.div`
 	display: flex;
