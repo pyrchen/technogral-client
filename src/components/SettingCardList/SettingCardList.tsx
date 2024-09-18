@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { FC } from 'react';
 
 import { SettingCard } from '@/components';
@@ -8,14 +10,18 @@ import { SettingCardListParts } from './SettingCardList.styled';
 const SettingCardList: FC = () => {
 	return (
 		<SettingCardListParts.__SettingCardList>
-			{cardsData.map(({ title, description, Icon }, i) => {
+			{cardsData.map(({ title, description, Icon, href }, i) => {
 				return (
-					<SettingCard
+					<Link
+						href={href}
 						key={i}
-						title={title}
-						desc={description}
-						icon={<Icon />}
-					></SettingCard>
+					>
+						<SettingCard
+							title={title}
+							desc={description}
+							icon={<Icon />}
+						></SettingCard>
+					</Link>
 				);
 			})}
 		</SettingCardListParts.__SettingCardList>

@@ -1,27 +1,29 @@
 import styled from 'styled-components';
 
-import { TPickers } from '@/types/styled.types';
+import { EveryWithDollarSign, TPickers } from '@/types/styled.types';
 import { toPx } from '@/utils/formatting.utils';
 
 import { IProgressBarProps } from './ProgressBar.types';
 
-const Picks: TPickers<IProgressBarProps> = {
-	width: ({ $width }) => (typeof $width === 'string' ? $width : toPx($width || 0)),
-	color: ({ color }) => color!,
-};
+type TypeProps = EveryWithDollarSign<Omit<IProgressBarProps, 'title'>>;
 
-const __ProgressBarWrapper = styled.div<IProgressBarProps>`
+const Picks = {
+	width: ({ $width }) => (typeof $width === 'string' ? $width : toPx($width || 0)),
+	color: ({ $color }) => $color!,
+} satisfies TPickers<TypeProps>;
+
+const __ProgressBarWrapper = styled.div<{ $width: string | number }>`
 	margin-top: 5px;
 	height: 4px;
 	position: relative;
 	overflow: hidden;
-	width: ${Picks.width};
+	width: ${({ $width }) => (typeof $width === 'string' ? $width : toPx($width || 0))};
 	background-color: #e3e3e3;
 	border-radius: 10px;
 `;
 
-const __ProgressIndicator = styled.div<IProgressBarProps>`
-	width: ${({ progress }) => (progress / 190) * 100}%;
+const __ProgressIndicator = styled.div<TypeProps>`
+	width: ${({ $progress }) => `${$progress * 100}%`};
 	background-color: ${Picks.color};
 	height: 100%;
 	border-radius: 10px;
