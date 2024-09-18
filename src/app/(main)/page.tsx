@@ -2,10 +2,10 @@
 
 import styled from 'styled-components';
 
-import { ArticlesList, ContentContainer, PageBanner, SideButtons } from '@/components/index';
+import { ArticlesList, ContentContainer, PageBanner, SideButtons } from '@/components';
 import { TextWeights } from '@/constants/text.contants';
-import { AllFiltersIcon } from '@/icons/index';
-import { Button, TypoText } from '@/uikit/index';
+import { AllFiltersIcon } from '@/icons';
+import { Button, TypoText } from '@/uikit';
 
 const __Banner = styled.div`
 	margin-bottom: 40px;

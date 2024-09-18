@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import { SideButtonsParts } from '@/components/SideButtons/SideButtons.styled';
 import { ISideButtonsComponentProps } from '@/components/SideButtons/SideButtons.types';
-import { ArrowTopNoTailIcon, QuestionMarkIcon } from '@/icons/index';
+import { ArrowTopNoTailIcon, QuestionMarkIcon } from '@/icons';
 
 const sideButtonsData = [{ Icon: QuestionMarkIcon }, { Icon: ArrowTopNoTailIcon }];
 

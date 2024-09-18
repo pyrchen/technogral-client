@@ -1,7 +1,7 @@
-'use client';
-
 import { ReactNode } from 'react';
 
+import MainPageLayout from '@/app/(main)/MainPageLayout';
+
 export default function MainLayout({ children }: Readonly<{ children: ReactNode }>) {
-	return children;
+	return <MainPageLayout>{children}</MainPageLayout>;
 }
