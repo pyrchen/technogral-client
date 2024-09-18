@@ -1,7 +1,7 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { __Input, __InputWrapper } from '@/uikit/TextInput/TextInput.styled';
-import { ITextInputProps, ITextInputState } from '@/uikit/TextInput/TextInput.types';
+import { ITextInputProps } from '@/uikit/TextInput/TextInput.types';
 
 const TextInput: FC<ITextInputProps> = ({
 	initialValue = '',
@@ -13,15 +13,15 @@ const TextInput: FC<ITextInputProps> = ({
 	fullWidth = false,
 	...props
 }) => {
-	const [state, setState] = useState<ITextInputState>({
-		focused: false,
-		dirty: false,
-		invalid: false,
-		valid: false,
-		pending: false,
-		touched: false,
-		untouched: false,
-	});
+	// const [state, setState] = useState<ITextInputState>({
+	// 	focused: false,
+	// 	dirty: false,
+	// 	invalid: false,
+	// 	valid: false,
+	// 	pending: false,
+	// 	touched: false,
+	// 	untouched: false,
+	// });
 
 	return (
 		<__InputWrapper

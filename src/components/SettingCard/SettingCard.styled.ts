@@ -1,4 +1,4 @@
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 
 const __CardWrapper = styled.div`
 	max-width: 400px;

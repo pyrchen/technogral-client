@@ -43,33 +43,10 @@
         ]
       }
     ],
-    "@typescript-eslint/naming-convention": [
-      "warn",
-      {
-        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
-        "selector": "default"
-      },
-      {
-        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
-        "selector": "variable",
-        "leadingUnderscore": "allowSingleOrDouble"
-      },
-      {
-        "format": null,
-        "selector": "objectLiteralProperty"
-      },
-      {
-        "format": ["PascalCase"],
-        "selector": "typeLike"
-      },
-      {
-        "format": ["UPPER_CASE", "PascalCase"],
-        "selector": "enumMember"
-      }
-    ],
     "no-use-before-define": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-empty-object-type": "off",
+    "import/no-named-as-default": 0
   },
   "ignorePatterns": ["scripts/**/*", "babel.config.js"]
 }
