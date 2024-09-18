@@ -18,7 +18,6 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				Hello
 				<StyledComponentsRegistry>
 					<GlobalStyles />
 					<StyledComponentsThemeRegistry>{children}</StyledComponentsThemeRegistry>
