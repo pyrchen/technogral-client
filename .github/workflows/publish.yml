@@ -32,9 +32,6 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
-      - name: Export Next.js to static files 📦
-        run: npx next export
-
       - name: List contents of out 📂
         run: ls -la ./out
 
