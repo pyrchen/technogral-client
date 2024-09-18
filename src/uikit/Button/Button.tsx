@@ -2,17 +2,31 @@
 
 import { FC } from 'react';
 
-import StyledButton from './Button.styled';
-import { IButtonProps } from './Button.types';
+import { ButtonVariants } from '@/uikit/Button/Button.styled';
 
-const Button: FC<IButtonProps> = ({ children, size = 'medium', ...props }) => {
+import { IButtonComponentsProps } from './Button.types';
+
+const Button: FC<IButtonComponentsProps> = ({
+	children,
+	variant = 'outlined',
+	size = 'medium',
+	fullWidth = false,
+	leftAddon = null,
+	rightAddon = null,
+	...props
+}) => {
+	const __Button = ButtonVariants[variant];
+
 	return (
-		<StyledButton
-			size={size}
+		<__Button
+			$size={size}
+			$fullWidth={fullWidth}
 			{...props}
 		>
+			{leftAddon}
 			{children}
-		</StyledButton>
+			{rightAddon}
+		</__Button>
 	);
 };
 

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "script:generate:component": "node scripts/generate-component.js"
+    "script:gen:component": "node scripts/generate-component.js",
+    "script:gen:imports": "node scripts/gen-index-imports.js && npm run lint:imports",
+    "lint:imports": "eslint --fix ./src/icons/index.ts && eslint --fix ./src/components/index.ts && eslint --fix ./src/uikit/index.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -17,6 +19,7 @@
     "styled-components": "^6.1.12"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

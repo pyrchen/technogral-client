@@ -37,7 +37,7 @@ const SpecifiedLightThemeColors = {
 		hover: LightThemeColors.MAIN.MAIN_2,
 	},
 	text: { ...LightThemeColors.TEXT },
-};
+} as const;
 
 export const ThemeColors: Record<AppThemes, TSpecifiedThemeColors> = {
 	[AppThemes.LIGHT]: SpecifiedLightThemeColors,
