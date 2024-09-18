@@ -1,6 +1,6 @@
 import { BannerParts } from '@/components/PageBanner/PageBanner.styled';
 import { TextWeights } from '@/constants/text.contants';
-import { Button, TypoText } from '@/uikit';
+import { Button, TypoText } from '@/uikit/index';
 
 const PageBanner = () => {
 	return (

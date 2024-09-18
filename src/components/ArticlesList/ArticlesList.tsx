@@ -1,5 +1,5 @@
-import { ArticleCard } from '@/components';
 import { ArticlesListParts } from '@/components/ArticlesList/ArticlesList.styled';
+import { ArticleCard } from '@/components/index';
 
 const ArticlesList = () => {
 	return (
