@@ -1,6 +1,6 @@
 'use client';
 
-import styled, { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 
 import { ContentContainer, RacingCardList } from '@/components';
 import { Button, TypoText } from '@/uikit';

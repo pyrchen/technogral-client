@@ -5,7 +5,7 @@ import { __ProgressBarParts } from '@/uikit/ProgressBar/ProgressBar.styled';
 
 import TypoText from '../TypoText/TypoText';
 
-import { IProgressBarContent, IProgressBarProps } from './ProgressBar.types';
+import { IProgressBarContent } from './ProgressBar.types';
 
 const ProgressBar: FC<IProgressBarContent> = ({ width = '190px', color = '#E3E3E3', progress, title, ...props }) => {
 	return (

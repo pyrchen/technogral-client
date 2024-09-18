@@ -2,8 +2,9 @@ import { createElement, FC } from 'react';
 
 import { UserStatsData } from '@/components/UserStatistics/UserStatistics.constants';
 import { UserStatisticsParts } from '@/components/UserStatistics/UserStatistics.styled';
+import { TAny } from '@/types/base';
 
-const UserStatistics: FC<any> = () => {
+const UserStatistics: FC<TAny> = () => {
 	return (
 		<UserStatisticsParts.__Wrapper>
 			{UserStatsData.map(({ value, title, type, icon }) => (
