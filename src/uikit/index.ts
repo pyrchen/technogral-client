@@ -3,6 +3,7 @@ import Avatar from './Avatar/Avatar';
 import Button from './Button/Button';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
+import IconButton from './IconButton/IconButton';
 import ProgressBar from './ProgressBar/ProgressBar';
 import RadioField from './RadioField/RadioField';
 import RadioFieldsGroup from './RadioFieldsGroup/RadioFieldsGroup';
@@ -16,6 +17,7 @@ export {
 	Button,
 	Divider,
 	Dot,
+	IconButton,
 	ProgressBar,
 	RadioField,
 	RadioFieldsGroup,

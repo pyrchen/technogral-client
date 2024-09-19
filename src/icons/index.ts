@@ -6,8 +6,10 @@ import EmailIcon from './email-icon.svg';
 import LoadPictureIcon from './load-picture-icon.svg';
 import LocationIcon from './location-icon.svg';
 import LogoIcon from './logo-icon.svg';
+import MessageIcon from './message-icon.svg';
 import MessageWindowIcon from './message-window-icon.svg';
 import NotificationIcon from './notification-icon.svg';
+import NotificationPageIcon from './notification-page-icon.svg';
 import PencilIcon from './pencil-icon.svg';
 import PersonalInfoIcon from './personal-info-icon.svg';
 import PhoneIcon from './phone-icon.svg';
@@ -32,8 +34,10 @@ export {
 	LoadPictureIcon,
 	LocationIcon,
 	LogoIcon,
+	MessageIcon,
 	MessageWindowIcon,
 	NotificationIcon,
+	NotificationPageIcon,
 	PencilIcon,
 	PersonalInfoIcon,
 	PhoneIcon,
