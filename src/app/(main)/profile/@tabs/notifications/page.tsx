@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { MessageIcon, NotificationPageIcon, VkIcon } from '@/icons';
-import { Button, IconButton, RadioField } from '@/uikit';
+import { Button, IconButton, RadioFieldsGroup } from '@/uikit';
 
 export default function SecurityPage() {
 	return (
@@ -26,28 +26,36 @@ export default function SecurityPage() {
 			</Button>
 			<__SecurityPagedDesc>Отпишитесь от всех статей, на которые Вы были подписаны</__SecurityPagedDesc>
 			<__RadioBlockContainer>
-				<div>
+				<__MiniSection>
 					<IconButton>
 						<NotificationPageIcon />
 					</IconButton>
-					<__SecurityPageTitle>Оповещать, если кто-то</__SecurityPageTitle>
-					<__RadioContainer>
-						<RadioField label='Ответил в отслеживаемой мною статье'></RadioField>
-						<RadioField label='Упомянул мою статью в сообщении'></RadioField>
-					</__RadioContainer>
-				</div>
-				<div>
+					<RadioFieldsGroup
+						name={'make-notifications'}
+						options={[
+							{ label: 'Ответил в отслеживаемой мною статье', value: 0 },
+							{ label: 'Упомянул мою статью в сообщении', value: 1 },
+						]}
+						onChange={() => {}}
+						groupTitle={'Оповещать, если кто-то'}
+					/>
+				</__MiniSection>
+				<__MiniSection>
 					<IconButton>
 						<MessageIcon />
 					</IconButton>
-					<__SecurityPageTitle>Служба поддержки: оповещать если</__SecurityPageTitle>
-					<__RadioContainer>
-						<RadioField label='Сотрудник категории открыл новый тикет с Вашим участием'></RadioField>
-						<RadioField label='Вы открыли тикет'></RadioField>
-						<RadioField label='Ответил на Ваш тикет'></RadioField>
-						<RadioField label='Упомянул Вас в сообщении'></RadioField>
-					</__RadioContainer>
-				</div>
+					<RadioFieldsGroup
+						name={'do-send'}
+						options={[
+							{ label: 'Сотрудник категории открыл новый тикет с Вашим участием', value: 0 },
+							{ label: 'Вы открыли тикет', value: 1 },
+							{ label: 'Ответил на Ваш тикет', value: 2 },
+							{ label: 'Упомянул Вас в сообщении', value: 3 },
+						]}
+						onChange={() => {}}
+						groupTitle={'Служба поддержки: оповещать если'}
+					/>
+				</__MiniSection>
 			</__RadioBlockContainer>
 		</__SecurityPageContainer>
 	);
@@ -55,6 +63,12 @@ export default function SecurityPage() {
 
 const __SecurityPageContainer = styled.div`
 	margin: 60px auto 50px;
+`;
+
+const __MiniSection = styled.section`
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 `;
 
 const __RadioContainer = styled.div`

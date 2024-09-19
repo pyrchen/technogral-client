@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
+import { EveryWithDollarSign } from '@/types/styled.types';
 import { toPx } from '@/utils/formatting.utils';
+
+type __TAccordionProps = EveryWithDollarSign<{ isOpen: boolean; contentHeight: number }>;
 
 const __AccordionWrapper = styled.div`
 	width: 100%;
@@ -20,21 +23,21 @@ const __AccordionTitleWrapper = styled.div`
 	justify-content: space-between;
 `;
 
-const __AccordionAnswer = styled.div<{ isOpen: boolean; contentHeight: number }>`
-	margin-top: ${({ isOpen }) => (isOpen ? '10px' : '0')};
-	padding: ${({ isOpen }) => (isOpen ? '15px 15px 20px 15px' : '0')};
+const __AccordionAnswer = styled.div<__TAccordionProps>`
+	margin-top: ${({ $isOpen }) => ($isOpen ? '10px' : '0')};
+	padding: ${({ $isOpen }) => ($isOpen ? '15px 15px 20px 15px' : '0')};
 	background-color: #ffffff;
 	border-radius: 10px;
-	max-height: ${({ isOpen, contentHeight }) => (isOpen ? toPx(contentHeight) : '0')};
+	max-height: ${({ $isOpen, $contentHeight }) => ($isOpen ? toPx($contentHeight) : '0')};
 	overflow: hidden;
 	transition:
 		max-height 0.3s ease,
 		margin-top 0.3s ease;
 `;
 
-const __AccordionIconWrapper = styled.div<{ isOpen: boolean }>`
+const __AccordionIconWrapper = styled.div<Omit<__TAccordionProps, '$contentHeight'>>`
 	transition: transform 0.3s ease;
-	transform: ${({ isOpen }) => (isOpen ? 'rotate(-180deg)' : 'rotate(0deg)')};
+	transform: ${({ $isOpen }) => ($isOpen ? 'rotate(-180deg)' : 'rotate(0deg)')};
 `;
 
 export const AccordionCardParts = {

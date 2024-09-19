@@ -1,41 +1,61 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
 import styled from 'styled-components';
 
-import { ProfileInputParts } from '@/components/ProfileInput/ProfileInput.styled';
+import { useForm } from 'react-hook-form';
+
+import { TextField } from '@/uikit';
+import { ChangeEmailSchema, ChangePasswordSchema } from '@/validation/security.schema';
 
 export default function SecurityPage() {
+	const passwordForm = useForm<{
+		currentPassword: string;
+		newPassword: string;
+		confirmPassword: string;
+	}>({
+		resolver: zodResolver(ChangePasswordSchema),
+		mode: 'onChange',
+	});
+
+	const emailForm = useForm<{
+		email: string;
+	}>({
+		resolver: zodResolver(ChangeEmailSchema),
+		mode: 'onChange',
+	});
+
 	return (
 		<__SecurityPageContainer>
 			<__InputsTitle>Пароль</__InputsTitle>
-			<__InputsContainer>
-				<ProfileInputParts.__ProfileInput
+			<__PasswordForm>
+				<TextField
+					{...passwordForm.register('currentPassword')}
 					placeholder='Текущий пароль'
-					$border='1px solid #E3E3E3'
-					$padding='19px 15px'
-				></ProfileInputParts.__ProfileInput>
-				<ProfileInputParts.__ProfileInput
+					error={passwordForm.formState.errors.currentPassword?.message}
+				/>
+				<TextField
+					{...passwordForm.register('newPassword')}
 					placeholder='Введите новый пароль'
-					$border='1px solid #E3E3E3'
-					$padding='19px 15px'
-				></ProfileInputParts.__ProfileInput>
-				<ProfileInputParts.__ProfileInput
+					error={passwordForm.formState.errors.newPassword?.message}
+				/>
+				<TextField
+					{...passwordForm.register('confirmPassword')}
 					placeholder='Повторите новый пароль'
-					$border='1px solid #E3E3E3'
-					$padding='19px 15px'
-				></ProfileInputParts.__ProfileInput>
-			</__InputsContainer>
+					error={passwordForm.formState.errors.confirmPassword?.message}
+				/>
+			</__PasswordForm>
 			<__InputsDesc>
 				Для Вашей безопасности, Вы должны указать текущий пароль для изменения пароля или e-mail.
 			</__InputsDesc>
 			<__InputsTitle>E-mail</__InputsTitle>
-			<__InputsContainer>
-				<ProfileInputParts.__ProfileInput
+			<__EmailForm>
+				<TextField
+					{...emailForm.register('email')}
 					placeholder='v***r@m***.r*'
-					$border='1px solid #E3E3E3'
-					$padding='19px 15px'
-				></ProfileInputParts.__ProfileInput>
-			</__InputsContainer>
+					error={emailForm.formState.errors.email?.message}
+				/>
+			</__EmailForm>
 			<__InputsDesc>
 				Если Вы измените адрес электронной почты, то придётся ещё раз подтвердить свою учётную запись.
 			</__InputsDesc>
@@ -59,12 +79,14 @@ const __InputsDesc = styled.p`
 	line-height: 20px;
 `;
 
-const __InputsContainer = styled.div`
+const __PasswordForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
 	max-width: 386px;
 `;
+
+const __EmailForm = styled(__PasswordForm)``;
 
 const __SecurityPageContainer = styled.div`
 	margin: 10px auto 0;

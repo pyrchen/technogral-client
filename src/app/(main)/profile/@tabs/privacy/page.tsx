@@ -8,22 +8,20 @@ export default function SecurityPage() {
 	return (
 		<__PrivacyPageContainer>
 			<__RadioContainer>
-				<div>
-					<RadioField label='Показывать мою текущую активность' />
-					<__RadioDesc>
-						Разрешить другим пользователям видеть, какую страницу Вы просматриваете в данный момент
-					</__RadioDesc>
-				</div>
-				<div>
-					<RadioField label='Получать рассылку сайта' />
-					<__RadioDesc>Получать письма от администрации форума, предназначенные для всех пользователей</__RadioDesc>
-				</div>
+				<RadioField
+					label='Показывать мою текущую активность'
+					hint='Разрешить другим пользователям видеть, какую страницу Вы просматриваете в данный момент'
+				/>
+				<RadioField
+					label='Получать рассылку сайта'
+					hint='Получать письма от администрации форума, предназначенные для всех пользователей'
+				/>
 				<RadioField label='Скрывать статистику моего профиля в темах' />
 				<RadioField label='Показывать день и месяц рождения' />
-				<div>
-					<RadioField label='Показывать год рождения' />
-					<__RadioDesc>Разрешить другим пользователям видеть Ваш возраст</__RadioDesc>
-				</div>
+				<RadioField
+					label='Показывать год рождения'
+					hint='Разрешить другим пользователям видеть Ваш возраст'
+				/>
 			</__RadioContainer>
 		</__PrivacyPageContainer>
 	);
@@ -35,7 +33,7 @@ const __PrivacyPageContainer = styled.div`
 
 const __RadioContainer = styled.div`
 	display: flex;
-	gap: 15px;
+	gap: 20px;
 	flex-direction: column;
 `;
 
