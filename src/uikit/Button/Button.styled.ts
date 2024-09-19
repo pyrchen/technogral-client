@@ -25,7 +25,7 @@ const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'varia
 	font-size: ${fontSizePicker};
 	font-weight: 500;
 	padding: 10px 15px 10px 15px;
-	border-radius: 7px;
+	border-radius: 10px;
 	transition-duration: 0.25s;
 	cursor: pointer;
 
