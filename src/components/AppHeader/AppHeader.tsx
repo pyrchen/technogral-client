@@ -9,7 +9,7 @@ import { ContentContainer, Logo } from '@/components';
 import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
 import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
-import { Button, TextInput, TypoText } from '@/uikit';
+import { Button, TextField, TypoText } from '@/uikit';
 import { createFlexStyles } from '@/utils/styled.utils';
 
 const __LinkStyled = styled.div`
@@ -46,7 +46,7 @@ const AppHeader: FC = () => {
 							<Logo />
 						</Link>
 					</__LinkStyled>
-					<TextInput
+					<TextField
 						placeholder={'hello'}
 						value={value}
 						onInput={(event) => setValue((event.target as HTMLInputElement).value)}

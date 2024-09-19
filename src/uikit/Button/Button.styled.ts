@@ -26,7 +26,7 @@ const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'varia
 	font-weight: 500;
 	padding: 10px 15px 10px 15px;
 	border-radius: 10px;
-	transition-duration: 0.25s;
+	transition: 0.25s all;
 	cursor: pointer;
 
 	&:active {
@@ -40,6 +40,11 @@ const __FilledButton = styled(__ButtonBase)`
 
 	&:hover {
 		background-color: ${bgColorHoverPicker};
+	}
+
+	&:disabled {
+		color: #7c7c7c;
+		background-color: #e3e3e3;
 	}
 `;
 

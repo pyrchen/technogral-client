@@ -1,10 +1,14 @@
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { useForm } from 'react-hook-form';
 
 import { SignUpFormParts } from '@/components/SignUpForm/SignUpForm.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
 import { VkIcon } from '@/icons';
-import { Button, TextInput, TypoText } from '@/uikit';
+import { Button, TextField, TypoText } from '@/uikit';
+import { SignInSchema } from '@/validation/auth.schema';
 
 const vkSansFont = localFont({
 	src: [
@@ -33,15 +37,29 @@ const Title = (
 );
 
 const SignUpForm = () => {
+	const form = useForm<{
+		email: string;
+		password: string;
+	}>({
+		resolver: zodResolver(SignInSchema),
+		mode: 'all',
+	});
+
+	const { register, handleSubmit, formState, getValues } = form;
+
+	const submitHandler = handleSubmit((data) => {});
+
 	return (
 		<SignUpFormParts.__SignUpFormWindow>
 			{Title}
-			<SignUpFormParts.__SignUpFormMain>
+			<SignUpFormParts.__SignUpForm onSubmit={submitHandler}>
 				<SignUpFormParts.__SignUpFormFields>
-					<TextInput
+					<TextField
+						{...register('email')}
 						size='large'
 						placeholder='Логин'
 						fullWidth
+						error={formState.errors.email?.message}
 					/>
 					<SignUpFormParts.__ForgotPassword>
 						<TypoText
@@ -51,10 +69,12 @@ const SignUpForm = () => {
 							<Link href={''}>Забыли пароль?</Link>
 						</TypoText>
 					</SignUpFormParts.__ForgotPassword>
-					<TextInput
+					<TextField
+						{...register('password')}
 						size='large'
 						placeholder='Пароль'
 						fullWidth
+						error={formState.errors.password?.message}
 					/>
 				</SignUpFormParts.__SignUpFormFields>
 				<SignUpFormParts.__SignUpFormButtons>
@@ -62,6 +82,7 @@ const SignUpForm = () => {
 						size='large'
 						variant='filled'
 						fullWidth
+						disabled={!formState.isValid}
 					>
 						Регистрация
 					</Button>
@@ -85,7 +106,7 @@ const SignUpForm = () => {
 						<VkIcon />
 					</SignUpFormParts.__ContinueWithIcon>
 				</SignUpFormParts.__ContinueWith>
-			</SignUpFormParts.__SignUpFormMain>
+			</SignUpFormParts.__SignUpForm>
 		</SignUpFormParts.__SignUpFormWindow>
 	);
 };

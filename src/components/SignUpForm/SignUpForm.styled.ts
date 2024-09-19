@@ -12,7 +12,7 @@ const __SignUpFormWindow = styled.div`
 	border-radius: 10px;
 `;
 
-const __SignUpFormMain = styled.form`
+const __SignUpForm = styled.form`
 	width: 100%;
 	margin-top: 30px;
 `;
@@ -53,7 +53,7 @@ const __ContinueWithIcon = styled.div`
 
 export const SignUpFormParts = {
 	__SignUpFormWindow,
-	__SignUpFormMain,
+	__SignUpForm,
 	__SignUpFormFields,
 	__SignUpFormButtons,
 	__ForgotPassword,
