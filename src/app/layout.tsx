@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 
 import { GlobalStyles } from '@/app/global';
 import StyledComponentsRegistry from '@/lib/registry';
+import StoreProvider from '@/lib/storeProvider';
 import StyledComponentsThemeRegistry from '@/lib/themeRegistry';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,7 +21,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 			<body className={inter.className}>
 				<StyledComponentsRegistry>
 					<GlobalStyles />
-					<StyledComponentsThemeRegistry>{children}</StyledComponentsThemeRegistry>
+					<StyledComponentsThemeRegistry>
+						<StoreProvider>{children}</StoreProvider>
+					</StyledComponentsThemeRegistry>
 				</StyledComponentsRegistry>
 			</body>
 		</html>

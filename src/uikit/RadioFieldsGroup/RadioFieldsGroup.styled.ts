@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { TextWeights } from '@/constants/text.contants';
+import { createMediumText } from '@/utils/styled.utils';
 
 const __GroupWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 21px;
 `;
 
 const __GroupOptions = styled(__GroupWrapper)`
@@ -15,8 +15,7 @@ const __GroupOptions = styled(__GroupWrapper)`
 `;
 
 const __Title = styled.h6`
-	font-size: 18px;
-	font-weight: ${TextWeights.MEDIUM};
+	${createMediumText(18)}
 	color: #0a0a0a;
 `;
 
