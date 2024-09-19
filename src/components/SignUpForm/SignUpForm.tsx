@@ -59,6 +59,7 @@ const SignUpForm = () => {
 						size='large'
 						placeholder='Логин'
 						fullWidth
+						autoFocus
 						error={formState.errors.email?.message}
 					/>
 					<SignUpFormParts.__ForgotPassword>

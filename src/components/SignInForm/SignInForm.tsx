@@ -60,6 +60,7 @@ const SignInForm = () => {
 						size='large'
 						placeholder='Логин'
 						fullWidth
+						autoFocus
 						error={formState.errors.email?.message}
 					/>
 					<SignIpFormParts.__ForgotPassword>
