@@ -7,7 +7,7 @@ import { ContentContainer, SignInForm } from '@/components';
 const __FormContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-top: 152px;
+	margin-top: 240px;
 `;
 
 export default function SignInPage() {

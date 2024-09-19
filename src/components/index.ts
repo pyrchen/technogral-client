@@ -10,6 +10,7 @@ import ContentContainer from './ContentContainer/ContentContainer';
 import Logo from './Logo/Logo';
 import PageBanner from './PageBanner/PageBanner';
 import ProfileAvatarInfo from './ProfileAvatarInfo/ProfileAvatarInfo';
+import ProfileInput from './ProfileInput/ProfileInput';
 import ProgressTable from './ProgressTable/ProgressTable';
 import RacingCard from './RacingCard/RacingCard';
 import RacingCardList from './RacingCardList/RacingCardList';
@@ -37,6 +38,7 @@ export {
 	Logo,
 	PageBanner,
 	ProfileAvatarInfo,
+	ProfileInput,
 	ProgressTable,
 	RacingCard,
 	RacingCardList,

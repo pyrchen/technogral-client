@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import styled, { useTheme } from 'styled-components';
 
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { ContentContainer, Logo } from '@/components';
 import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
 import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
-import { Button, TextInput, TypoText } from '@/uikit';
+import { Button, TextField, TypoText } from '@/uikit';
 import { createFlexStyles } from '@/utils/styled.utils';
 
 const __LinkStyled = styled.div`
@@ -22,10 +22,23 @@ const __LinkStyled = styled.div`
 
 const AppHeader: FC = () => {
 	const [value, setValue] = useState('hello');
+	const [isScrolled, setIsScrolled] = useState(false);
 	const theme = useTheme();
 
+	const handleScroll = () => {
+		const offset = window.scrollY;
+		setIsScrolled(offset > 0); // Если прокрутка больше 50px, то фон поменяется
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
-		<__AppHeader>
+		<__AppHeader isScrolled={isScrolled}>
 			<ContentContainer>
 				<__Grid>
 					<__LinkStyled>
@@ -33,7 +46,7 @@ const AppHeader: FC = () => {
 							<Logo />
 						</Link>
 					</__LinkStyled>
-					<TextInput
+					<TextField
 						placeholder={'hello'}
 						value={value}
 						onInput={(event) => setValue((event.target as HTMLInputElement).value)}
