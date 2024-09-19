@@ -8,7 +8,7 @@ import ProgressBar from './ProgressBar/ProgressBar';
 import RadioField from './RadioField/RadioField';
 import RadioFieldsGroup from './RadioFieldsGroup/RadioFieldsGroup';
 import SelectField from './SelectField/SelectField';
-import TextInput from './TextInput/TextInput';
+import TextField from './TextField/TextField';
 import TypoText from './TypoText/TypoText';
 
 export {
@@ -22,6 +22,6 @@ export {
 	RadioField,
 	RadioFieldsGroup,
 	SelectField,
-	TextInput,
+	TextField,
 	TypoText,
 };
