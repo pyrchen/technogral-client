@@ -1,4 +1,5 @@
 const PX = 'px';
+const DEG = 'deg';
 
 export const toPx = (value: string | number) => {
 	if (typeof value === 'string') {
@@ -6,6 +7,14 @@ export const toPx = (value: string | number) => {
 	}
 
 	return `${value}${PX}`;
+};
+
+export const toDeg = (value: string | number) => {
+	if (typeof value === 'string') {
+		return `${parseFloat(value)}${DEG}`;
+	}
+
+	return `${value}${DEG}`;
 };
 
 export const formatIntNumber = (

@@ -5,12 +5,12 @@ import styled, { useTheme } from 'styled-components';
 
 import { FC, useCallback, useEffect, useState } from 'react';
 
-import { ContentContainer, Logo } from '@/components';
-import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
-import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
+import { ContentContainer, Logo, MiniProfile } from '@/components';
+import { links } from '@/components/AppHeader/AppHeader.constants';
+import { __AppHeader, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
 import { TNullable } from '@/types/base';
-import { Button, TextField, TypoText } from '@/uikit';
+import { TextField, TypoText } from '@/uikit';
 import { createFlexStyles } from '@/utils/styled.utils';
 
 const __LinkStyled = styled.div`
@@ -69,18 +69,19 @@ const AppHeader: FC = () => {
 							);
 						})}
 					</__Links>
-					<__ButtonsLinks>
-						{buttonLinks.map(({ name, link, variant }) => {
-							return (
-								<Link
-									key={name}
-									href={link}
-								>
-									<Button variant={variant}>{name}</Button>
-								</Link>
-							);
-						})}
-					</__ButtonsLinks>
+					{/*<__ButtonsLinks>*/}
+					{/*	{buttonLinks.map(({ name, link, variant }) => {*/}
+					{/*		return (*/}
+					{/*			<Link*/}
+					{/*				key={name}*/}
+					{/*				href={link}*/}
+					{/*			>*/}
+					{/*				<Button variant={variant}>{name}</Button>*/}
+					{/*			</Link>*/}
+					{/*		);*/}
+					{/*	})}*/}
+					{/*</__ButtonsLinks>*/}
+					<MiniProfile />
 				</__Grid>
 			</ContentContainer>
 		</__AppHeader>

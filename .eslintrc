@@ -48,7 +48,8 @@
     "@typescript-eslint/no-empty-object-type": "off",
     "import/no-named-as-default": 0,
     "no-unused-vars": "warn",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "prefer-spread": "off"
   },
   "ignorePatterns": ["scripts/**/*", "babel.config.js"]
 }

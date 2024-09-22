@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { ArticlesList, ContentContainer, PageBanner, SideButtons } from '@/components';
+import { ArticlesList, ContentContainer, PageBanner, SideButtons, SocialSuggestionsPopover } from '@/components';
 import { TextWeights } from '@/constants/text.contants';
 import { AllFiltersIcon } from '@/icons';
 import { Button, TypoText } from '@/uikit';
@@ -72,6 +72,7 @@ export default function Home() {
 			</__ArticlesTypes>
 			<ArticlesList />
 			<SideButtons data-side-buttons />
+			<SocialSuggestionsPopover />
 		</ContentContainer>
 	);
 }

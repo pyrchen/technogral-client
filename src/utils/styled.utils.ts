@@ -21,6 +21,15 @@ export const createFlexStyles = (
 	`;
 };
 
+createFlexStyles.withGap = (gap: TNullable<number>, ...params: Parameters<typeof createFlexStyles>) => {
+	const gapStyle = isNotNull(gap) ? `gap: ${toPx(gap)}` : '';
+
+	return `
+		${createFlexStyles.apply(null, params)}
+		${gapStyle}
+	`;
+};
+
 export const createBaseTextStyles = (
 	fontSize: TNullable<number> = 14,
 	weight: TNullable<TextWeights> = TextWeights.NORMAL

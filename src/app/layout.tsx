@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 
 import { ReactNode } from 'react';
 
-import { GlobalStyles } from '@/app/global';
+import { GlobalStyles, ScrollBarStyles } from '@/app/global';
 import StyledComponentsRegistry from '@/lib/registry';
 import StoreProvider from '@/lib/storeProvider';
 import StyledComponentsThemeRegistry from '@/lib/themeRegistry';
@@ -21,6 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 			<body className={inter.className}>
 				<StyledComponentsRegistry>
 					<GlobalStyles />
+					<ScrollBarStyles />
 					<StyledComponentsThemeRegistry>
 						<StoreProvider>{children}</StoreProvider>
 					</StyledComponentsThemeRegistry>
