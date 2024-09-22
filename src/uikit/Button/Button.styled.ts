@@ -29,7 +29,7 @@ const __ButtonBase = styled.button<EveryWithDollarSign<Omit<IButtonProps, 'varia
 	transition: 0.25s all;
 	cursor: pointer;
 
-	&:active {
+	&:active:not(:disabled) {
 		transition-duration: 0.1s;
 		transform: scale(0.96);
 	}
