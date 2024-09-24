@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import styled, { useTheme } from 'styled-components';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
-import { ContentContainer, Logo } from '@/components';
-import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
-import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
+import { ContentContainer, Logo, MiniProfile } from '@/components';
+import { links } from '@/components/AppHeader/AppHeader.constants';
+import { __AppHeader, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
-import { Button, TextField, TypoText } from '@/uikit';
+import { TNullable } from '@/types/base';
+import { TextField, TypoText } from '@/uikit';
 import { createFlexStyles } from '@/utils/styled.utils';
 
 const __LinkStyled = styled.div`
@@ -22,15 +23,14 @@ const __LinkStyled = styled.div`
 
 const AppHeader: FC = () => {
 	const [value, setValue] = useState('hello');
-	const [isScrolled, setIsScrolled] = useState(false);
+	const [isScrolled, setIsScrolled] = useState<TNullable<boolean>>(null);
 	const theme = useTheme();
 
-	const handleScroll = () => {
-		const offset = window.scrollY;
-		setIsScrolled(offset > 0); // Если прокрутка больше 50px, то фон поменяется
-	};
+	const handleScroll = useCallback(() => setIsScrolled(window.scrollY > 0), []);
 
 	useEffect(() => {
+		setIsScrolled(window.scrollY > 0);
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -38,7 +38,7 @@ const AppHeader: FC = () => {
 	}, []);
 
 	return (
-		<__AppHeader isScrolled={isScrolled}>
+		<__AppHeader $isScrolled={isScrolled}>
 			<ContentContainer>
 				<__Grid>
 					<__LinkStyled>
@@ -47,8 +47,7 @@ const AppHeader: FC = () => {
 						</Link>
 					</__LinkStyled>
 					<TextField
-						placeholder={'hello'}
-						value={value}
+						placeholder={'Search'}
 						onInput={(event) => setValue((event.target as HTMLInputElement).value)}
 					/>
 					<__Links>
@@ -70,18 +69,19 @@ const AppHeader: FC = () => {
 							);
 						})}
 					</__Links>
-					<__ButtonsLinks>
-						{buttonLinks.map(({ name, link, variant }) => {
-							return (
-								<Link
-									key={name}
-									href={link}
-								>
-									<Button variant={variant}>{name}</Button>
-								</Link>
-							);
-						})}
-					</__ButtonsLinks>
+					{/*<__ButtonsLinks>*/}
+					{/*	{buttonLinks.map(({ name, link, variant }) => {*/}
+					{/*		return (*/}
+					{/*			<Link*/}
+					{/*				key={name}*/}
+					{/*				href={link}*/}
+					{/*			>*/}
+					{/*				<Button variant={variant}>{name}</Button>*/}
+					{/*			</Link>*/}
+					{/*		);*/}
+					{/*	})}*/}
+					{/*</__ButtonsLinks>*/}
+					<MiniProfile />
 				</__Grid>
 			</ContentContainer>
 		</__AppHeader>

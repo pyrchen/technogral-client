@@ -116,6 +116,8 @@ const __OptionsBlock = styled.div<{ $isOpened: boolean }>`
 	border-radius: 10px;
 	overflow: hidden;
 	opacity: ${({ $isOpened }) => ($isOpened ? '1' : '0')};
+	z-index: 1;
+
 	${createTransitionBase()}
 `;
 

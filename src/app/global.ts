@@ -34,3 +34,24 @@ export const GlobalStyles = createGlobalStyle`
 		margin-left: 0;
 	}
 `;
+
+export const ScrollBarStyles = createGlobalStyle`
+	body {
+		&::-webkit-scrollbar-thumb {
+			background-color: #8f8f8f;
+			border-radius: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background-color: #769CFF;
+		}
+
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: #E3E3E3;
+		}
+	}
+`;

@@ -42,13 +42,13 @@ const Accordion: FC<IAccordionComponentProps> = ({ question, answer, ...props })
 				>
 					{question}
 				</TypoText>
-				<AccordionCardParts.__AccordionIconWrapper isOpen={isOpen}>
+				<AccordionCardParts.__AccordionIconWrapper $isOpen={isOpen}>
 					<ArrowBottomIcon />
 				</AccordionCardParts.__AccordionIconWrapper>
 			</AccordionCardParts.__AccordionTitleWrapper>
 			<AccordionCardParts.__AccordionAnswer
-				isOpen={isOpen}
-				contentHeight={isOpen ? contentHeight : 0} // Управляем высотой с помощью состояния
+				$isOpen={isOpen}
+				$contentHeight={isOpen ? contentHeight : 0} // Управляем высотой с помощью состояния
 				ref={contentRef}
 			>
 				<TypoText

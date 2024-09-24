@@ -1,9 +1,17 @@
 import styled from 'styled-components';
 
+import { createBaseTextStyles } from '@/utils/styled.utils';
+
 const __Wrapper = styled.div`
 	display: flex;
+	flex-direction: column;
 	align-items: flex-start;
-	justify-content: flex-start;
+	gap: 12px;
+`;
+
+const __FieldWrapper = styled.div`
+	display: flex;
+	align-items: flex-start;
 `;
 
 const __Circle = styled.div`
@@ -70,10 +78,17 @@ const __RadioInput = styled.input`
 	}
 `;
 
+const __Hint = styled.span`
+	${createBaseTextStyles()}
+	color: #0A0A0A;
+`;
+
 export const RadioFieldParts = {
 	__Wrapper,
+	__FieldWrapper,
 	__Circle,
 	__RadioInput,
 	__Label,
 	__Text,
+	__Hint,
 };

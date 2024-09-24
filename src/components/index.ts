@@ -8,6 +8,7 @@ import ArticlesList from './ArticlesList/ArticlesList';
 import AvatarLoaderBlock from './AvatarLoaderBlock/AvatarLoaderBlock';
 import ContentContainer from './ContentContainer/ContentContainer';
 import Logo from './Logo/Logo';
+import MiniProfile from './MiniProfile/MiniProfile';
 import PageBanner from './PageBanner/PageBanner';
 import ProfileAvatarInfo from './ProfileAvatarInfo/ProfileAvatarInfo';
 import ProfileInput from './ProfileInput/ProfileInput';
@@ -19,6 +20,7 @@ import SettingCardList from './SettingCardList/SettingCardList';
 import SideButtons from './SideButtons/SideButtons';
 import SignInForm from './SignInForm/SignInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
+import SocialSuggestionsPopover from './SocialSuggestionsPopover/SocialSuggestionsPopover';
 import Tab from './Tab/Tab';
 import Tabs from './Tabs/Tabs';
 import UserBirthdayBlock from './UserBirthdayBlock/UserBirthdayBlock';
@@ -36,6 +38,7 @@ export {
 	AvatarLoaderBlock,
 	ContentContainer,
 	Logo,
+	MiniProfile,
 	PageBanner,
 	ProfileAvatarInfo,
 	ProfileInput,
@@ -47,6 +50,7 @@ export {
 	SideButtons,
 	SignInForm,
 	SignUpForm,
+	SocialSuggestionsPopover,
 	Tab,
 	Tabs,
 	UserBirthdayBlock,

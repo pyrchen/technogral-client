@@ -72,6 +72,7 @@ const SignInForm = () => {
 					</SignIpFormParts.__ForgotPassword>
 					<TextField
 						{...register('password')}
+						type='password'
 						size='large'
 						placeholder='Пароль'
 						fullWidth
