@@ -22,6 +22,7 @@ import SelectChosenIcon from './select-chosen-icon.svg';
 import SelectHoverIcon from './select-hover-icon.svg';
 import SettingsIcon from './settings-icon.svg';
 import StatisticsIcon from './statistics-icon.svg';
+import TelegramIcon from './telegram-icon.svg';
 import ThumbUpIcon from './thumb-up-icon.svg';
 import VkIcon from './vk-icon.svg';
 import YoutubeIcon from './youtube-icon.svg';
@@ -51,6 +52,7 @@ export {
 	SelectHoverIcon,
 	SettingsIcon,
 	StatisticsIcon,
+	TelegramIcon,
 	ThumbUpIcon,
 	VkIcon,
 	YoutubeIcon,

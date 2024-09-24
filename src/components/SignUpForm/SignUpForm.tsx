@@ -45,9 +45,9 @@ const SignUpForm = () => {
 		mode: 'all',
 	});
 
-	const { register, handleSubmit, formState, getValues } = form;
+	const { register, handleSubmit, formState } = form;
 
-	const submitHandler = handleSubmit((data) => {});
+	const submitHandler = handleSubmit(() => {});
 
 	return (
 		<SignUpFormParts.__SignUpFormWindow>
