@@ -17,6 +17,13 @@
     "sourceType": "module" // allows using import/export
   },
   "plugins": ["simple-import-sort", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",

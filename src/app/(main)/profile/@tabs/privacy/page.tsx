@@ -36,10 +36,3 @@ const __RadioContainer = styled.div`
 	gap: 20px;
 	flex-direction: column;
 `;
-
-const __RadioDesc = styled.p`
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
-	margin-top: 10px;
-`;

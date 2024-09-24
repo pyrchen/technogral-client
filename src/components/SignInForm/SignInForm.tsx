@@ -46,9 +46,9 @@ const SignInForm = () => {
 		mode: 'all',
 	});
 
-	const { register, handleSubmit, formState, getValues } = form;
+	const { register, handleSubmit, formState } = form;
 
-	const submitHandler = handleSubmit((data) => {});
+	const submitHandler = handleSubmit(() => {});
 
 	return (
 		<SignIpFormParts.__SignInFormWindow>

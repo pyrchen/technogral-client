@@ -12,18 +12,18 @@ import SelectField from './SelectField/SelectField';
 import TextField from './TextField/TextField';
 import TypoText from './TypoText/TypoText';
 
- export {
- AnySection,
-Avatar,
-Button,
-Divider,
-Dot,
-FrameIcon,
-IconButton,
-ProgressBar,
-RadioField,
-RadioFieldsGroup,
-SelectField,
-TextField,
-TypoText
- };
+export {
+	AnySection,
+	Avatar,
+	Button,
+	Divider,
+	Dot,
+	FrameIcon,
+	IconButton,
+	ProgressBar,
+	RadioField,
+	RadioFieldsGroup,
+	SelectField,
+	TextField,
+	TypoText,
+};

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import styled, { useTheme } from 'styled-components';
 
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { ContentContainer, Logo, MiniProfile } from '@/components';
 import { links } from '@/components/AppHeader/AppHeader.constants';
@@ -22,13 +22,12 @@ const __LinkStyled = styled.div`
 `;
 
 const AppHeader: FC = () => {
-	const [value, setValue] = useState('hello');
 	const [isScrolled, setIsScrolled] = useState<TNullable<boolean>>(null);
 	const theme = useTheme();
 
-	const handleScroll = useCallback(() => setIsScrolled(window.scrollY > 0), []);
-
 	useEffect(() => {
+		const handleScroll = () => setIsScrolled(window.scrollY > 0);
+
 		setIsScrolled(window.scrollY > 0);
 
 		window.addEventListener('scroll', handleScroll);
@@ -46,10 +45,7 @@ const AppHeader: FC = () => {
 							<Logo />
 						</Link>
 					</__LinkStyled>
-					<TextField
-						placeholder={'Search'}
-						onInput={(event) => setValue((event.target as HTMLInputElement).value)}
-					/>
+					<TextField placeholder={'Search'} />
 					<__Links>
 						{links.map(({ name, link }) => {
 							return (

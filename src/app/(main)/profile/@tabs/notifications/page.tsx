@@ -71,12 +71,6 @@ const __MiniSection = styled.section`
 	gap: 20px;
 `;
 
-const __RadioContainer = styled.div`
-	margin-top: 20px;
-	display: flex;
-	gap: 15px;
-	flex-direction: column;
-`;
 const __SecurityPageTitle = styled.h2`
 	font-size: 18px;
 	margin-top: 20px;
