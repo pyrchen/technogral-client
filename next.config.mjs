@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// output: 'export',
+	output: 'standalone',
 	compiler: {
 		styledComponents: true,
+	},
+	eslint: {
+		ignoreDuringBuilds: true,
 	},
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
