@@ -11,7 +11,7 @@ import { SignUpFormParts } from '@/components/SignUpForm/SignUpForm.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
 import { VkIcon } from '@/icons';
 import { useAuthActions, useToastsActions } from '@/store/actions.store';
-import { useAuthSelector, useAuthThunks, useIsAuthenticated } from '@/store/auth';
+import { useAuthSelector, useAuthThunks } from '@/store/auth';
 import { ToastType } from '@/store/toasts';
 import { TAny } from '@/types/base';
 import { Button, TextField, TypoText } from '@/uikit';
@@ -59,7 +59,6 @@ const SignUpForm = () => {
 	const { loading, error } = useAuthSelector((state) => state);
 	const { setAuthToken } = useAuthActions();
 	const { signup } = useAuthThunks();
-	const isAuthenticated = useIsAuthenticated();
 
 	const submitHandler = handleSubmit(async (data) => {
 		const signUpResponseData = (await signup(data)) as TAny;
