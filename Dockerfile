@@ -1,6 +1,6 @@
 FROM node:latest
 
-ENV API_BASE_URL=pyrchen-technogral-client-c8b9.twc1.net
+ENV API_BASE_URL=https://pyrchen-technogral-server-fd8e.twc1.net/
 
 WORKDIR /app
 
