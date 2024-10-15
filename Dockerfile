@@ -1,5 +1,7 @@
 FROM node:latest
 
+ENV API_BASE_URL=pyrchen-technogral-client-c8b9.twc1.net
+
 WORKDIR /app
 
 COPY package.json package-lock.json ./
