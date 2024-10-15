@@ -1,3 +1,5 @@
+console.log(process.env.API_BASE_URL);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	output: 'standalone',
@@ -14,10 +16,24 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `${process.env.API_BASE_URL}/:path*`, // Proxy to Backend
+				destination: `https://pyrchen-technogral-server-fd8e.twc1.net/:path*`, // Proxy to Backend
 			},
 		];
 	},
+	async headers() {
+		return [
+			{
+				// matching all API routes
+				source: "/api/:path*",
+				headers: [
+					// other headers omitted for brevity...
+					{ key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+					{ key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
+				]
+			}
+		]
+	},
+	crossOrigin: 'anonymous',
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

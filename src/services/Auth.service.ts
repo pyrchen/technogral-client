@@ -17,7 +17,7 @@ export class AuthService {
 
 	async login(credentials: IAuthLoginRequest) {
 		try {
-			const response = await this.axiosService.api.post<TAuthResponse>('/api/auth/login', credentials);
+			const response = await this.axiosService.api.post<TAuthResponse>('api/auth/login', credentials);
 			return response.data;
 		} catch (error: TAny) {
 			return error.response.data as TApiErrorBase;
