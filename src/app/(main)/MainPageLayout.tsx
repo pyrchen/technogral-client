@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import React, { PropsWithChildren } from 'react';
 
-import { AppFooter, AppHeader } from '@/components';
+import { AppFooter, AppHeader, Toasts } from '@/components';
 
 const __PageContainer = styled.div`
 	display: flex;
@@ -30,6 +30,7 @@ export default function MainPageLayout({ children }: PropsWithChildren) {
 			<AppHeader />
 			<__MainContainer>{children}</__MainContainer>
 			<AppFooter />
+			<Toasts />
 		</__PageContainer>
 	);
 }

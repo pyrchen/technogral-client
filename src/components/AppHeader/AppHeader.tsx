@@ -6,11 +6,12 @@ import styled, { useTheme } from 'styled-components';
 import { FC, useEffect, useState } from 'react';
 
 import { ContentContainer, Logo, MiniProfile } from '@/components';
-import { links } from '@/components/AppHeader/AppHeader.constants';
-import { __AppHeader, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
+import { buttonLinks, links } from '@/components/AppHeader/AppHeader.constants';
+import { __AppHeader, __ButtonsLinks, __Grid, __Links } from '@/components/AppHeader/AppHeader.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
+import { useIsAuthenticated } from '@/store/auth';
 import { TNullable } from '@/types/base';
-import { TextField, TypoText } from '@/uikit';
+import { Button, TextField, TypoText } from '@/uikit';
 import { createFlexStyles } from '@/utils/styled.utils';
 
 const __LinkStyled = styled.div`
@@ -21,9 +22,50 @@ const __LinkStyled = styled.div`
 	}
 `;
 
-const AppHeader: FC = () => {
-	const [isScrolled, setIsScrolled] = useState<TNullable<boolean>>(null);
+const Links = () => {
 	const theme = useTheme();
+
+	return (
+		<__Links>
+			{links.map(({ name, link }) => {
+				return (
+					<Link
+						key={name}
+						href={link}
+					>
+						<TypoText
+							color={theme.text.TEXT_2}
+							as={TextTags.SPAN}
+							fontSize={16}
+							weight={TextWeights.MEDIUM}
+						>
+							{name}
+						</TypoText>
+					</Link>
+				);
+			})}
+		</__Links>
+	);
+};
+
+const ButtonLinks = () => (
+	<__ButtonsLinks>
+		{buttonLinks.map(({ name, link, variant }) => {
+			return (
+				<Link
+					key={name}
+					href={link}
+				>
+					<Button variant={variant}>{name}</Button>
+				</Link>
+			);
+		})}
+	</__ButtonsLinks>
+);
+
+const AppHeader: FC = () => {
+	const isAuthed = useIsAuthenticated();
+	const [isScrolled, setIsScrolled] = useState<TNullable<boolean>>(null);
 
 	useEffect(() => {
 		const handleScroll = () => setIsScrolled(window.scrollY > 0);
@@ -46,38 +88,8 @@ const AppHeader: FC = () => {
 						</Link>
 					</__LinkStyled>
 					<TextField placeholder={'Search'} />
-					<__Links>
-						{links.map(({ name, link }) => {
-							return (
-								<Link
-									key={name}
-									href={link}
-								>
-									<TypoText
-										color={theme.text.TEXT_2}
-										as={TextTags.SPAN}
-										fontSize={16}
-										weight={TextWeights.MEDIUM}
-									>
-										{name}
-									</TypoText>
-								</Link>
-							);
-						})}
-					</__Links>
-					{/*<__ButtonsLinks>*/}
-					{/*	{buttonLinks.map(({ name, link, variant }) => {*/}
-					{/*		return (*/}
-					{/*			<Link*/}
-					{/*				key={name}*/}
-					{/*				href={link}*/}
-					{/*			>*/}
-					{/*				<Button variant={variant}>{name}</Button>*/}
-					{/*			</Link>*/}
-					{/*		);*/}
-					{/*	})}*/}
-					{/*</__ButtonsLinks>*/}
-					<MiniProfile />
+					<Links />
+					{isAuthed ? <MiniProfile /> : <ButtonLinks />}
 				</__Grid>
 			</ContentContainer>
 		</__AppHeader>

@@ -7,6 +7,7 @@ import ArticleCard from './ArticleCard/ArticleCard';
 import ArticlesList from './ArticlesList/ArticlesList';
 import AvatarLoaderBlock from './AvatarLoaderBlock/AvatarLoaderBlock';
 import ContentContainer from './ContentContainer/ContentContainer';
+import DropdownMenu from './DropdownMenu/DropdownMenu';
 import Logo from './Logo/Logo';
 import MiniProfile from './MiniProfile/MiniProfile';
 import PageBanner from './PageBanner/PageBanner';
@@ -23,6 +24,7 @@ import SignUpForm from './SignUpForm/SignUpForm';
 import SocialSuggestionsPopover from './SocialSuggestionsPopover/SocialSuggestionsPopover';
 import Tab from './Tab/Tab';
 import Tabs from './Tabs/Tabs';
+import Toasts from './Toasts/Toasts';
 import UserBirthdayBlock from './UserBirthdayBlock/UserBirthdayBlock';
 import UserRole from './UserRole/UserRole';
 import UserStatistics from './UserStatistics/UserStatistics';
@@ -37,6 +39,7 @@ export {
 	ArticlesList,
 	AvatarLoaderBlock,
 	ContentContainer,
+	DropdownMenu,
 	Logo,
 	MiniProfile,
 	PageBanner,
@@ -53,6 +56,7 @@ export {
 	SocialSuggestionsPopover,
 	Tab,
 	Tabs,
+	Toasts,
 	UserBirthdayBlock,
 	UserRole,
 	UserStatistics,

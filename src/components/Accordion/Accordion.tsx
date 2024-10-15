@@ -1,3 +1,5 @@
+'use client';
+
 import { useTheme } from 'styled-components';
 
 import { FC, useEffect, useRef, useState } from 'react';

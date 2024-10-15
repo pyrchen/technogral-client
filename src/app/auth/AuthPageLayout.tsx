@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import React, { PropsWithChildren } from 'react';
 
-import { AppHeader } from '@/components';
+import { AppHeader, Toasts } from '@/components';
 
 const __PageContainer = styled.div`
 	display: flex;
@@ -37,6 +37,7 @@ export default function AuthPageLayout({ children }: PropsWithChildren) {
 			<GlobalStyles />
 			<AppHeader />
 			<__MainContainer>{children}</__MainContainer>
+			<Toasts />
 		</__PageContainer>
 	);
 }

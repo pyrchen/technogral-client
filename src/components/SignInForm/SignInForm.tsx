@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { useForm } from 'react-hook-form';
@@ -8,6 +9,11 @@ import { SignIpFormParts } from '@/components/SignInForm/SignInForm.styled';
 import { SignUpFormParts } from '@/components/SignUpForm/SignUpForm.styled';
 import { TextTags, TextWeights } from '@/constants/text.contants';
 import { VkIcon } from '@/icons';
+import { useAppDispatch } from '@/lib/hooks';
+import { useToastsActions } from '@/store/actions.store';
+import { useAuthSelector, useAuthThunks } from '@/store/auth';
+import { ToastType } from '@/store/toasts';
+import { TAny } from '@/types/base';
 import { Button, TextField, TypoText } from '@/uikit';
 import { SignInSchema } from '@/validation/auth.schema';
 
@@ -38,6 +44,8 @@ const Title = (
 );
 
 const SignInForm = () => {
+	const dispatch = useAppDispatch();
+	const router = useRouter();
 	const form = useForm<{
 		email: string;
 		password: string;
@@ -48,7 +56,34 @@ const SignInForm = () => {
 
 	const { register, handleSubmit, formState } = form;
 
-	const submitHandler = handleSubmit(() => {});
+	const { login } = useAuthThunks();
+	const { loading, error } = useAuthSelector((state) => state);
+
+	const { addToast } = useToastsActions();
+
+	const submitHandler = handleSubmit(async (data) => {
+		const loginResponseData = (await login(data)) as TAny;
+
+		if (loginResponseData.payload.statusCode >= 400) {
+			return addToast({
+				message: loginResponseData.payload.message,
+				type: ToastType.ERROR,
+			});
+		}
+
+		if (!loginResponseData.payload.data) return;
+
+		const loginData = loginResponseData.payload.data;
+
+		if (!loginData || !loginData.accessToken) return;
+
+		addToast({
+			message: 'Вы успешно вошли в аккаунт',
+			type: ToastType.SUCCESS,
+		});
+
+		router.push('/');
+	});
 
 	return (
 		<SignIpFormParts.__SignInFormWindow>
@@ -61,6 +96,7 @@ const SignInForm = () => {
 						placeholder='Логин'
 						fullWidth
 						error={formState.errors.email?.message}
+						disabled={loading}
 					/>
 					<SignIpFormParts.__ForgotPassword>
 						<TypoText
@@ -77,6 +113,7 @@ const SignInForm = () => {
 						placeholder='Пароль'
 						fullWidth
 						error={formState.errors.password?.message}
+						disabled={loading}
 					/>
 				</SignIpFormParts.__SignInFormFields>
 				<SignIpFormParts.__SignInFormButtons>
@@ -85,17 +122,23 @@ const SignInForm = () => {
 						variant='filled'
 						fullWidth
 						type='submit'
-						disabled={!formState.isValid}
+						disabled={!formState.isValid || loading}
 					>
 						Войти
 					</Button>
-					<Button
-						size='large'
-						variant='outlined'
-						fullWidth
+					<Link
+						href={'/auth/signup'}
+						style={{ width: '100%' }}
 					>
-						У меня нет учетной записи
-					</Button>
+						<Button
+							size='large'
+							variant='outlined'
+							type='button'
+							fullWidth
+						>
+							У меня нет учетной записи
+						</Button>
+					</Link>
 				</SignIpFormParts.__SignInFormButtons>
 				<SignIpFormParts.__ContinueWith>
 					<TypoText

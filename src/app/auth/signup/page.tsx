@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { ContentContainer } from '@/components';
 import SignUpForm from '@/components/SignUpForm/SignUpForm';
+import { AuthorisedForbiddenRoute } from '@/lib/protectedRoute';
 
 const __FormContainer = styled.div`
 	display: flex;
@@ -13,10 +14,12 @@ const __FormContainer = styled.div`
 
 export default function SignUpPage() {
 	return (
-		<ContentContainer>
-			<__FormContainer>
-				<SignUpForm />
-			</__FormContainer>
-		</ContentContainer>
+		<AuthorisedForbiddenRoute>
+			<ContentContainer>
+				<__FormContainer>
+					<SignUpForm />
+				</__FormContainer>
+			</ContentContainer>
+		</AuthorisedForbiddenRoute>
 	);
 }

@@ -10,6 +10,14 @@ const nextConfig = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
+	async rewrites() {
+		return [
+			{
+				source: '/api/:path*',
+				destination: `${process.env.API_BASE_URL}/:path*`, // Proxy to Backend
+			},
+		];
+	},
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

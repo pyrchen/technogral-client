@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 
 import Accordion from '../Accordion/Accordion';
@@ -14,7 +16,7 @@ const AccordionList: FC = () => {
 						key={i}
 						answer={answer}
 						question={question}
-					></Accordion>
+					/>
 				);
 			})}
 		</AccordionListParts.__AccordionList>
