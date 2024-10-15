@@ -8,7 +8,7 @@ import { TNullable } from '@/types/base';
 const initialState: IAuthInitialData = {
 	loading: false,
 	error: null,
-	token: localStorage ? localStorage.getItem('accessToken') : null,
+	token: typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null,
 	isAuthed: false,
 };
 

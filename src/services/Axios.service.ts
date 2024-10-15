@@ -27,7 +27,7 @@ export class AxiosService {
 
 	private setInterceptorRequest() {
 		this.api.interceptors.request.use((config) => {
-			const accessToken = localStorage ? localStorage.getItem('accessToken') : null;
+			const accessToken = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null;
 
 			if (accessToken) {
 				return {
