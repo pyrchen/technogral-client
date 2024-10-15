@@ -1,11 +1,10 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 import { ContentContainer, Tabs } from '@/components';
-import { useIsAuthenticated } from '@/store/auth';
 
 const ROUTE_PREFIX = '/profile';
 const subRoutes = [
@@ -25,14 +24,6 @@ export default function ProfileLayout({
 	children: ReactNode;
 }>) {
 	const pathname = usePathname();
-	const isAuthenticated = useIsAuthenticated();
-	const router = useRouter();
-
-	useEffect(() => {
-		if (!isAuthenticated) {
-			router.push('/auth/signin');
-		}
-	}, [isAuthenticated, router]);
 
 	return (
 		<ContentContainer>

@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 
 import { ContentContainer, SignInForm } from '@/components';
-import { AuthorisedForbiddenRoute } from '@/lib/protectedRoute';
 
 const __FormContainer = styled.div`
 	display: flex;
@@ -13,12 +12,10 @@ const __FormContainer = styled.div`
 
 export default function SignInPage() {
 	return (
-		<AuthorisedForbiddenRoute>
-			<ContentContainer>
-				<__FormContainer>
-					<SignInForm />
-				</__FormContainer>
-			</ContentContainer>
-		</AuthorisedForbiddenRoute>
+		<ContentContainer>
+			<__FormContainer>
+				<SignInForm />
+			</__FormContainer>
+		</ContentContainer>
 	);
 }
