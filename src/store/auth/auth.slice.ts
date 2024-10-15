@@ -2,12 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { AuthThunks } from '@/store/auth/auth.thunks';
 import { IAuthInitialData } from '@/store/auth/auth.types';
+import { TAuthResponse } from '@/types/auth.api.types';
 import { TNullable } from '@/types/base';
 
 const initialState: IAuthInitialData = {
 	loading: false,
 	error: null,
-	token: localStorage.getItem('accessToken') || null,
+	token: localStorage ? localStorage.getItem('accessToken') : null,
 	isAuthed: false,
 };
 
@@ -34,7 +35,7 @@ const slice = createSlice({
 				state.error = null;
 			})
 			.addCase(AuthThunks.login.fulfilled, (state, action) => {
-				const token = action.payload?.data?.accessToken || null;
+				const token = (action.payload as TAuthResponse)?.data?.accessToken || null;
 
 				state.loading = false;
 
