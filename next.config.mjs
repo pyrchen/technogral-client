@@ -1,8 +1,7 @@
-console.log(process.env.API_BASE_URL);
+console.log('Proxy server: ', process.env.API_BASE_URL);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	output: 'standalone',
 	compiler: {
 		styledComponents: true,
 	},
