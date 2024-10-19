@@ -8,6 +8,8 @@ export class AxiosService {
 	public api = AxiosService.createNewAxiosInstance();
 	private static _instance: AxiosService;
 
+	protected apiPrefix = '/api';
+
 	constructor() {
 		this.setInterceptorRequest();
 		this.setInterceptorResponse();
@@ -19,6 +21,10 @@ export class AxiosService {
 		}
 
 		return AxiosService._instance;
+	}
+
+	public withPrefix(url: string): string {
+		return this.apiPrefix + url;
 	}
 
 	private static createNewAxiosInstance() {

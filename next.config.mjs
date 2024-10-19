@@ -16,23 +16,23 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `https://pyrchen-technogral-server-fd8e.twc1.net/:path*`, // Proxy to Backend
+				destination: `${process.env.API_BASE_URL}/:path*`, // Proxy to Backend
 			},
 		];
 	},
-	async headers() {
-		return [
-			{
-				// matching all API routes
-				source: "/api/:path*",
-				headers: [
-					// other headers omitted for brevity...
-					{ key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-					{ key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
-				]
-			}
-		]
-	},
+	// async headers() {
+	// 	return [
+	// 		{
+	// 			// matching all API routes
+	// 			source: "/api/:path*",
+	// 			headers: [
+	// 				// other headers omitted for brevity...
+	// 				{ key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+	// 				{ key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
+	// 			]
+	// 		}
+	// 	]
+	// },
 	crossOrigin: 'anonymous',
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
