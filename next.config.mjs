@@ -2,6 +2,7 @@ console.log('Proxy server: ', process.env.API_BASE_URL);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	output: 'standalone',
 	compiler: {
 		styledComponents: true,
 	},
@@ -19,20 +20,6 @@ const nextConfig = {
 			},
 		];
 	},
-	// async headers() {
-	// 	return [
-	// 		{
-	// 			// matching all API routes
-	// 			source: "/api/:path*",
-	// 			headers: [
-	// 				// other headers omitted for brevity...
-	// 				{ key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-	// 				{ key: "Referrer-Policy", value: "strict-origin-when-cross-origin" }
-	// 			]
-	// 		}
-	// 	]
-	// },
-	crossOrigin: 'anonymous',
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

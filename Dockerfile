@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:21
 
 ENV API_BASE_URL="https://pyrchen-technogral-server-fd8e.twc1.net"
 
@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm ci
+RUN npm i
 
 COPY . .
 
